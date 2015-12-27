@@ -7,9 +7,9 @@
     
 	<body>	
 	<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h2 style="color:white"><center><b>"EDIT OF YOUR DONATION ITEMS"<b></center></h2><br><br><hr/>
+<h2 style="color:white"><center><b>"EDIT OF YOUR DONATION ITEMS"<b></center></h2><br>
 <div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise">
-<u><h3>Chnage will permanatly store on Donating Things</h3></u><br>
+<h3>Chnage will permanatly store on Donating Things</h3><br>
     	
     <form method="POST" class="post-form">{% csrf_token %}
 	{{ form|crispy }}

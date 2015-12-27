@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  
 	<!-- BOOTSTRAP STYLES-->
-
+	<link href="{% static 'fotter/css/main.css' %}" rel="stylesheet">
      <!-- FONTAWESOME STYLES-->
 
         <!-- CUSTOM STYLES-->
@@ -19,22 +19,13 @@
 <link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
 <script src="{% static 'js/classie1.js' %}"></script>
 <script src="{% static 'js/classie2.js' %}"></script>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
 
-<script src="{% static 'js/modernizr.js' %}"></script> 
-<!----------------ONLINE------->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="{% static 'assets/js/jquery.metisMenu.js' %}"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="{% static 'assets/js/custom.js' %}"></script>
-    <script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>
+   
 
 </head>
 <body>
@@ -93,8 +84,8 @@
             <div id="page-inner" style="background-color:LightSkyBlue">
                 <div class="row" >
                     <div class="col-md-12" style="background-color:LightSkyBlue">
-                     <h1 style="font-family: oswald">Dashboard</h1>   
-                        <h3 style="font-family: oswald">Welcome  <u><b>{{ request.user.username }}</b></u> to see you back. </h3>
+                     <h1 style="font-family: oswald; color:DarkCyan">Dashboard</h1>   
+                        <h3 style="font-family:oswald; color:white">Welcome  <b>{{ request.user.username }}</b>
                     </div>
                  </div>            
                  <!-- /. ROW  -->
@@ -178,19 +169,9 @@
 {% block content %}
 {% endblock %}
        </div>   </div>     </div>     
-{% include "products/footer.html" %}
+{% include "products/footer1.html" %}
                         
-                <!-- /. ROW 
-     <!-- /. WRAPPER  -->
-    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-    <!-- JQUERY SCRIPTS -->
-    <script src="{% static 'assets/js/jquery-1.10.2.js' %}"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-    <!-- METISMENU SCRIPTS -->
-    <script src="{% static 'assets/js/jquery.metisMenu.js' %}"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="{% static 'assets/js/custom.js' %}"></script>
+
  
 </body>
 </html>

@@ -23,12 +23,14 @@ E-CHARITYProducts
 
 {% block jumbotron2 %}
 <body>
-    <div id="wrapper" style="width:1288px;height:auto ;padding:1px;border:10px groove LightSteelBlue; background-color:LightSkyBlue">
+
+    <div id="wrapper" style="auto;height:auto ;padding:1px;border:10px groove LightSteelBlue; background-color:LightSkyBlue">
 
   <div class="container-fluid">
- <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px; width:1140px; padding-left:auto">
+<br>
+ <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px; width:1120px; padding-left:60px">
    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox" style="width: 1140px; padding-right:0px">
+    <div class="carousel-inner" role="listbox" style="width: 1140px;padding-left:10px">
       <div class="item active">
        <div class="img" style="height: 400px; width:1140px">
  <img id="img1" src="{% static 'img/ii1.jpg' %}">

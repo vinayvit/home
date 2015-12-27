@@ -11,6 +11,12 @@
 		<meta name="keywords" content="sidebar, off-canvas, menu, navigation, effect, inspiration, css transition, SVG, morphing, animation" />
 		<meta name="author" content="Codrops" />
 
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+
+    <link href="{% static 'fotter/css/font-awesome.min.css' %}" rel="stylesheet">
+   
+	<link href="{% static 'fotter/css/main.css' %}" rel="stylesheet">
+	
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/menu_bubble.css' %}"  />
 <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
@@ -19,15 +25,11 @@
 <link href="{% static 'css/bootstrap-theme.css' %}" type="text/css" />
 <link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
 <!----------------ONLINE------->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
-<script src="{% static 'js/facebook.js' %}"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://connect.facebook.net/en_US/all.js"></script>
+
 <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" />
 
 <style>
@@ -225,12 +227,12 @@ background:LightSteelBlue;
 	
 <!----------------------------------------------------------CONTAINE FOR EVENT------------------------------>
 <div class="container-fluid">
-<div class="jumbotron"><img src='{% static "img/snap/0charity.png" %}'
+<div class="jumbotron" ><h1 style="padding-left:150px"/> <img src='{% static "img/snap/0charity.png" %}' class="img-responsive inline"/></h1>
 	</div>
 		</div>  
 </div>
 </div>
-{% include "products/footer.html" %}
+{% include "products/footer1.html" %}
 
     </html>
    {% endblock %}
