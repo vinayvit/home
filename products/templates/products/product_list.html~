@@ -24,23 +24,23 @@ E-CHARITYProducts
 {% block jumbotron2 %}
 <body>
 
-    <div id="wrapper" style="auto;height:auto ;padding:1px;border:10px groove LightSteelBlue; background-color:LightSkyBlue">
+    <div id="wrapper" style="padding:1px;border:10px groove LightSteelBlue; background-color:LightSkyBlue">
 
   <div class="container-fluid">
 <br>
- <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px; width:1120px; padding-left:60px">
+ <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px; width:1060px; padding-left:60px">
    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox" style="width: 1140px;padding-left:10px">
+    <div class="carousel-inner" role="listbox" style="width: 1060px;padding-left:10px">
       <div class="item active">
-       <div class="img" style="height: 400px; width:1140px">
- <img id="img1" src="{% static 'img/ii1.jpg' %}">
+       <div class="img" style="height: 400px; width:1053px">
+ <img id="img1" src="{% static 'img/ii1.jpg' %}" class="img-responsive"/>
       </div>
 
    </div>
 
       <div class="item">
        <div class="img" style="height: 400px; width:1053px">
- <img id="img1" src="{% static 'img/ii2.jpg' %}">
+ <img id="img1" src="{% static 'img/ii2.jpg' %}" class="img-responsive"/>
       </div>
 
    </div>
@@ -48,14 +48,14 @@ E-CHARITYProducts
 
       <div class="item ">
        <div class="img" style="height: 400px; width:1053px">
- <img id="img1" src="{% static 'img/i.jpg' %}">
+ <img id="img1" src="{% static 'img/i.jpg' %}" class="img-responsive"/>
       </div>
 
    </div>
 
       <div class="item ">
        <div class="img" style="height: 400px; width:1053px">
- <img id="img1" src="{% static 'img/nepal.jpg' %}">
+ <img id="img1" src="{% static 'img/nepal.jpg' %}" class="img-responsive"/>
       </div>
 
    </div>
@@ -79,34 +79,35 @@ E-CHARITYProducts
             <p style="font: oswald; padding-top:7px">
                 <h3 class="show-for-medium-up" style="color:LightYellow">"Celebrate the Light of Happiness...<br><br> Invlove Own and Dear-one's with Charity<br>
                 <br>Fight for these and that things which you Waste or not Use.."<br><br></div>
-<div style="height:auto; background-color:LightSteelBlue">
+<div style="height:auto; background-color:GhostWhite">
 <hr>
              <center> <h1 style="color:RoyalBlue  "><b> DONATED PRODUCT SECTION<b></h1></center>
 
 <br><br>
  <div class="container-fluid">
 <div class='row'>
+
 {% for object in object_list %}
 
 		<div class='col-md-4'>
 			<div class="thumbnail">
-<center><a href='/products/{{ object.pk }}/'> <h1>{{ object.title|upper }}</h1></a></center>
 	{% if object %}
-                       <ul>
- <li>
-         <img src="{{ object.docfile.url }}" width="270px" height="250px" alt="Image not avilable..">
-                                
-                        </li>
-</ul>
-                {% else %}
-                        <p><img id="blah" src="{% static 'img/snap/0noitem.gif' %}"   width="190px" height="150px" alt="No Image of item"/></p>
-                {% endif %}
-<div class="caption">
-<p><u>{{ object.description|truncatechars:25 }}</u></p>
-<p><a href="/products/{{ object.pk }}/" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/products/enquiry/" class="btn btn-default" role="button">{{ object.user}}</a></p></div>
-		   	 </div>
+<div>
+
+
+ <img src="{{ object.docfile.url }}" width="380px" height="210px" alt="Image not avilable.."></img>
+
+						</div>	<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ item.image }}" /> -->
+
+
+{% endif %}
+<a href='/products/{{ object.pk }}/'> <h1>{{ object.title|upper }}</h1></a>
+
+<a href="/products/{{ object.pk }}/" class='btn btn-primary btn-block' role="button">View</a>
+<a href="/products/enquiry/{{ object.user}}/" class='btn btn-default btn-block' role="button"><span class="glyphicon glyphicon-user">&nbsp;&nbsp;{{ object.user }}</span></a>
+ 
+                     
+           </div>
 
 
 		</div>
@@ -115,9 +116,11 @@ E-CHARITYProducts
 {% endfor %}
 
 </div>
-</div></div></div>
+</div>
+</div></div>
 </body>
 {% endblock %}
+
 
 
 

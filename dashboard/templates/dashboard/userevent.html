@@ -1,0 +1,35 @@
+{% extends "dashboard.html"%}
+{% block content %}
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+<link href="{% static 'css/datetimepicker.css' %}" rel="stylesheet" />
+<script src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
+<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
+
+        <body>
+                
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<h1 style="color:white"><center><b>Publish Event<b></center></h1><br>
+<div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: ghostwhite">
+
+ 
+
+<p><b><h2>REVEAL YOUR PERSONAL Event Details WITH US..</h2></b></p>
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                 
+  {{ form|crispy }}
+                                <br>
+ {% if request.user.is_authenticated %}
+                        <div class="col-md-5"></div><div class="col-md-7">
+                        <p><input type="submit" class="btn btn-info btn-lg"  value="Submit Event" /></p></div>
+                </form>
+{% else %}
+<div class="col-md-5"></div><div class="col-md-7"><p><button type="button"  class="btn btn-info btn-lg" onclick="alert('Login first for Publish Event')">Submit Event</button>
+</p></div>
+{% endif %}
+</div></div>
+ </body>
+
+</html>
+{% endblock %}

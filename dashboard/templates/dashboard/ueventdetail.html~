@@ -1,0 +1,96 @@
+{% extends "dashboard.html"%}
+{% block content %}
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+<link href="{% static 'css/datetimepicker.css' %}" rel="stylesheet" />
+<script src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
+<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
+
+        <body>
+                <!-- List of uploaded documents -->
+                  <div class="container-fluid" style="width: auto; height:850px; color:DarkCyan; background :url({% static "img/map-image.png" %}) no-repeat center top"> 
+         
+         <div class="container-fluid">
+
+ <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px; width:100%; ">
+   <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox" style="width: 100%;">
+   {% if event.snap %}
+   <div class="item ">
+       <div class="img" style="height: 400px; width:110%">
+ <img id="img1"src="{{ event.snap.url }}"  class="img-inline-responsive" width="100%" height="400px" alt="your selected item"/>
+      </div>
+
+   </div>
+
+      <div class="item active">
+       <div class="img" style="height: 400px; width:110%">		   	
+ <img id="img1" src="{{ event.snap.url }}" class="img-inline-responsive" width="110%" height="400px" alt="your selected item"/>
+     </div>
+   </div>
+ {% else %}
+<div class="item active ">
+       <div class="img" style="height: 400px; width:110%">
+
+                       <img id="img1" src="{% static 'assets/img/find_user.png' %}" class="img-inline-responsive" width="110%" height="400px" alt="your selected item"/>
+		
+  </div>
+</div>
+						
+                {% endif %}
+
+  </div>
+</div>
+      Edit: <a class="btn btn-default" href="{% url 'devent_edit' pk=event.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> 
+<div class='row'>
+       
+
+		<div class='col-sm-5'></div><div class='col-sm-6'>
+<h1>{{  event.eventtype }} </h1><br></div>
+<div class='col-sm-2'></div>
+                <div class='col-sm-3'>
+<a href='{{ product.get_absolute_url }}'><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.place }}</span></h3></a> 
+<br>       
+		
+<a href='{{ product.get_absolute_url }}'><h3><i class="fa fa-calendar"></i> <span class="network-name">Dresscode: {{  event.dresscode }}</span></h3></a> 
+</div>
+                <div class='col-sm-3'>
+			 {% if event.snap %}
+ <img id="img1"src="{{ event.snap.url }}"  class="img-inline-responsive" width="60%" height="200px" alt="your selected item"/>
+     
+
+   
+ {% else %}
+
+                       <img id="img1" src="{% static 'assets/img/find_user.png' %}" class="img-inline-responsive" width="60%" height="200px" alt="your selected item"/>
+					
+                {% endif %}
+
+
+
+ 
+</div>
+	 <div class='col-sm-3'>
+	<a href='{{ product.get_absolute_url }}'><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.date_event }} 	</span></h3></a> 
+<br>           		
+<a href='{{ product.get_absolute_url }}'><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.duration }}	</span></h3></a> 
+           				<br> 
+					<a href="/products/enquiry/{{ event.user}}/" ><h3 class='btn btn-default btn-block'><i class="fa fa-calendar"></i> <span class="network-name">{{  event.user }}</span></h3></a> 
+
+		</div>
+
+
+
+</div><div class='col-sm-2'></div>
+ 					<p>{{ event.description|truncatewords:15}}</p> 
+
+
+  </div>
+</div>
+                     
+ 
+              </body>
+
+</html>
+{% endblock %}

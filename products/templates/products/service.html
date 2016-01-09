@@ -1,0 +1,29 @@
+{% extends "dashboard.html"%}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+<link href="{% static 'css/datetimepicker.css' %}" rel="stylesheet" />
+<script src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
+   <body>
+   <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<h1 style="color:white"><center><b>"DONATE OR   PUBLISH  YOUR Service"<b></h1></center><br><br>*For the Previous Service details check-out your History<hr/>
+<div class="container-fluid" style="height:125%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br><br><br>
+
+                <div class="margin" style="margin-left:5%"> 
+                    <u><h3 style="color:black; padding-left:10%">Enter the valuable details of your Providing Service</h3></u></div><br>
+                <form action="{% url "service" %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+{{ form|crispy }}
+   
+                       <br>
+                        
+                       <div class="margin" style="margin-left:120px">
+                        <button type="submit" class="btn btn-info btn-lg" style="margin-left:30%" >Publish Service</button>
+                        </div>
+                </form>
+                </div>
+
+</div>
+</body>
+  {% endblock %}

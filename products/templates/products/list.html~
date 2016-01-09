@@ -11,7 +11,7 @@
 <div class="container-fluid" style="height:150%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br>
 
                 <div class="margin" style="margin-left:5%"> 
-                    <h3 style="color:white; padding-left:10%">Enter the valuable details of your Donating Things</h3></div><br>
+                    <h3 style="color:DarkCyan; padding-left:10%">Enter the valuable details of your Donating Things</h3></div><br>
                 <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         

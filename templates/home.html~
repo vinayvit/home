@@ -10,14 +10,9 @@
 		<meta name="description" content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
 		<meta name="keywords" content="sidebar, off-canvas, menu, navigation, effect, inspiration, css transition, SVG, morphing, animation" />
 		<meta name="author" content="Codrops" />
-
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
-
     <link href="{% static 'fotter/css/font-awesome.min.css' %}" rel="stylesheet">
-   
 	<link href="{% static 'fotter/css/main.css' %}" rel="stylesheet">
-	
-
 <link rel="stylesheet" type="text/css" href="{% static 'css/menu_bubble.css' %}"  />
 <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
 <link href="{% static 'css/search.css' %}" rel="stylesheet" type="text/css" />
@@ -61,7 +56,7 @@ background:LightSteelBlue;
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<h1><b>E-CHARITY</b></h1>
+<a href=''> <h1><b>E-CHARITY</b></h1></a>
 </div>
 <div class="navbar-collapse collapse">
 <ul class="nav navbar-nav navbar-right">
@@ -70,7 +65,7 @@ background:LightSteelBlue;
  {% if request.user.is_authenticated %}
 
 <a href="dashboard/"><button class="menu-button" align="left" values>Open Menu</button><span class="glyphicon glyphicon-user">USER</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button> 
+<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button>
 {% else %}
 <button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">LOGIN HERE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  {% endif %}
@@ -106,13 +101,13 @@ background:LightSteelBlue;
         <div class="modal-body">
 <b>Already REGISTER Click Here <b>
 <a href="{% url 'auth_login' %}"> <img src='{% static "img/snap/01sig.png" %}' /> </a><hr>
-<b>First Time User Click Here <b>     
+<b>First Time User Click Here <b>
  <a href="{% url 'registration_register' %}"> <img src='{% static "img/snap/0001user" %}' /> </a>
                 </div>
 <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
-       
+
       </div>
 
     </div></div>
@@ -121,39 +116,80 @@ background:LightSteelBlue;
 
 {% load staticfiles %}
 {% block content %}
- <div id="myBODY1">
+
 <div class="column large-10 large-centered text-center">
             <p style="padding-top:7px">
-                <h3 id="text1" class="show-for-medium-up">"It's time to re-think charity...<br><br> It's time to give charity the big-league freedoms we really give to business...<br><br>The fight for these freedoms must be our new cause, because without them, all of our causes are ultimately lost."</h3></p>
+                <h1 id="text1" class="show-for-medium-up">E Community Giving</h1><br> <h3 id="text1"<br>Connect within the community, exchange goods and services, and donate to charities. All at the same place.</h3></p>
+<br><br>
+ <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="#" class="btn btn-success btn-lg" data-toggle="modal" id='rim1' data-target="#cls"><i class="fa fa-laptop"></i> <span class="network-name">Classified</span></a>
+                            </li>
+                            <li>
+                                <a href="/products/service/" class="btn btn-info btn-lg"><i class="fa fa-cog"></i> <span class="network-name">Services</span></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'event' %}" class="btn btn-warning btn-lg"><i class="fa fa-calendar"></i> <span class="network-name">Events</span></a>
+                            </li>
+ 			 <li>
+                                <a href="{% url 'list' %}" class="btn btn-danger btn-lg"><i class="fa fa-cart-plus"></i> <span class="network-name">Account Donate</span></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'enquiry' %}" class="btn btn-primary btn-lg"><i class="fa fa-comments-o"></i> <span class="network-name">Connect</span></a>
+                            </li>
+                        </ul>
 </div>
+<!------------------------------------------------------>
+<div class="modal fade" id="cls" role="dialog">
+<div class="modal-dialog modal-sm">
+      <div class="modal-content">
+         <div class="modal-footer">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">CLASSFIED BY CATAGROIS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+        </div>
+        <div class="modal-body"><center>
+<a href="{% url 'list' %}" class="btn btn-primary btn-lg"><i class="fa fa-laptop"></i> <span class="network-name">PRODUCT'S</span></a></center><hr>
+<center>
+<a href="/products/service/" class="btn btn-primary btn-lg"><i class="fa fa-laptop"></i> <span class="network-name">SERVICE'S</span></a></center><hr>
+<center>
+<a href="{% url 'event' %}" class="btn btn-primary btn-lg"><i class="fa fa-laptop"></i> <span class="network-name">EVENT'S</span></a></center>
+                </div>
+<div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+</div>
+
+      </div>
+      </div>
+<!------------------------------------------------------>
 <br><hr>
-<div class="container-fluid"  style="background-color:GhostWhite ">
+ <div class="container-fluid"  style="background-color:GhostWhite ">
     <p><h3><b><u>Latest Requested items</u></b></h3></p><br>
 <div class="row">
 {% for object in post %}
 		<div class='col-sm-3'>
 			<div class="thumbnail">
-<a href='/products/{{ object.pk }}/'> <h1><u>{{ object.title|upper }}</u></h1></a><br>
-	
+
+
             {% if object %}
-<ul>
-	
-                                
- <img src="{{ object.docfile.url }}" width="180px" height="180px" alt="Image not avilable..">
-                                </a>
-						</ul>	<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ item.image }}" /> -->
+<div>
+
+
+ <img src="{{ object.docfile.url }}" width="283px" height="180px" alt="Image not avilable.."></img>
+
+						</div>	<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ item.image }}" /> -->
 
 
 {% endif %}
-<div class="caption">
-<p><u>{{ object.description|truncatechars:20  }}</u></p>
+<a href='/products/{{ object.pk }}/'> <h1>{{ object.title|upper }}</h1></a>
 
-<a href="/products/{{ object.pk }}/" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/products/enquiry/" class="btn btn-default" role="button">{{ object.user }}</a></div>
+<a href="/products/{{ object.pk }}/" class='btn btn-primary btn-block' role="button">View</a>
+<a href="/products/enquiry/{{ object.user}}/" class='btn btn-default btn-block' role="button"><span class="glyphicon glyphicon-user">&nbsp;&nbsp;{{ object.user }}</span></a>
 		   	 </div>
 
 
 		</div>
+
 
 {% cycle "" "" "" "</div><br/><hr/><div class='row'><p><h3><b><u>Latest Donated Items</u></b></h3></p></br>" %}
 {% endfor %}
@@ -169,14 +205,14 @@ background:LightSteelBlue;
 				<h3 id="text2" class="show-for-medium-up">E-Charity is about giving back, raising trust more than of money for great causes and having the most fun in the world while doing it. And, here's as</h3>
 				<br>
 				<br>
-				
+
 			</div>
-	
+
 		<div class="row" id="text2">
 			<div class='col-sm-1'></div>
 <div class='col-sm-5'>
 				<b>Best Pricing Guarantee<b>
-					<dd>3% guaranteed pricing and fastest access to your funds. Nearly every other site charges 8%. 
+					<dd>3% guaranteed pricing and fastest access to your funds. Nearly every other site charges 8%.
 
 					<b>Raise 3x More<b>
 					<dd>Raise 3x more money and crush your fundraising goal with our proven, easy fundraising ideas.</dd>
@@ -199,18 +235,18 @@ background:LightSteelBlue;
 				</dl>
 			</div>
 		</div>
-		<br><br>		
+		<br><br>
 		</div>
 <div style="height:230px; background-color: LightSteelBlue">
 
 
-    <div class="col-md-6" style="height:200px; padding-top:10px">
+    <div class="col-md-6" style="color:LightYellow; padding-top:10px">
       <img src="{% static 'img/snap/index.jpeg' %}"class="img-circle">
-      <p id="p1" style="color:LightYellow">"We think sometimes that poverty is only being hungry, uneducated and homeless. The poverty of being unwanted, unloved and uncared for is the greatest poverty. We must start in our own homes to remedy this kind of poverty."</p>
-    </div>
+      <p id="p1" style="color:LightYellow">"We think sometimes that poverty is only being hungry, uneducated and homeless. The poverty of being unwanted, unloved and uncared for is the greatest poverty. We must start in our own homes to remedy this kind of poverty."</h4>
+     </div>
     <div class="col-md-6" style=" height:200px; padding-top:10px">
       <img src="{% static 'img/snap/index2.jpeg' %}"class="img-circle">
-     <p id="p1" style="float:right; color:LightYellow">“When we feel love and kindness toward others, it not only makes others feel loved and cared for, but it helps us also to develop inner happiness and peace.”</p>
+     <p id="p1" style="float:right; color:LightYellow">“When we feel love and kindness toward others, it not only makes others feel loved and cared for, but it helps us also to develop inner happiness and peace.”</h4>
     </div>
 </div></div>
 
@@ -221,18 +257,19 @@ background:LightSteelBlue;
                 <h2 class="show-for-medium-up">"Fundraising Ideas...<br><br> The easiest, most innovative, awesome ways to raise money for a personal cause or charity"</h2></p>
 
 </div></div>
-	
-	
+
+
 		<br><br><br>
-	
+
 <!----------------------------------------------------------CONTAINE FOR EVENT------------------------------>
 <div class="container-fluid">
 <div class="jumbotron" ><h1 style="padding-left:150px"/> <img src='{% static "img/snap/0charity.png" %}' class="img-responsive inline"/></h1>
 	</div>
-		</div>  
+		</div>
 </div>
 </div>
 {% include "products/footer1.html" %}
 
     </html>
    {% endblock %}
+

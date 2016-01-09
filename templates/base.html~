@@ -43,7 +43,7 @@
 .navbar-default{
 background:white;
 }
-.modal-footer{
+.modal-footer,.modal-header{
 background:LightSteelBlue;
 }
 

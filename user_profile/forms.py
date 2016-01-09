@@ -14,7 +14,7 @@ from os.path import join as pjoin
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ( 'avatar', 'twitter' )
+        fields = ( 'avatar',)
 
 
 

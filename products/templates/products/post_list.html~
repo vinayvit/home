@@ -8,7 +8,8 @@
    <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
 <h2 style="color:white"><center><b>"PAST DETAILS OF YOUR DONATION"<b></center></h2><br><br>
 <div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise">
-    <h4 style="color:DarkCyan">Edit OR View Your Past Action with US.</h4><br>
+    <a href="/dashboard/detail/"><center><h3 class='btn btn-warning btn-block' role="button" >Event History</h3> </center></a>
+<br>
 	    <div class="row">
         <div class="post">
 		{% if posts %}

@@ -1,0 +1,68 @@
+{% extends "dashboard.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<head>
+    <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
+</head>
+   <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<h2 style="color:white"><center><b>"PAST DETAILS OF YOUR DONATION"<b></center></h2><br><br><hr/>
+<div class="container-fluid" style="height:130%; width: auto; color:skyblue; background-color: ghostwhite">
+    <u><h3 style="color:SteelBlue">Edit OR View Your Past Action with US.</h3></u><br>
+	    <div class="row">
+        <div class="post">
+		{% if posts %}
+           <div class="col-md-3" >
+  
+			   
+			<h3><label> ProductImage</label></h3><hr>
+			  {% for Product in posts %}
+			
+                        <ul>                               
+                          <a href="{% url 'service_detail_history' pk=Product.pk %}">  <img id="img88" src="{{ Product.docfile.url }}" width="60px" height=60px" alt="{{ Product.docfile.name }}"></a>
+                               </li>
+                        
+                        </ul>
+               <hr>
+                {% endfor %}
+                
+			</div>
+            
+			<div class="col-md-2">
+			<h3><label> Title: </label></h3><hr>
+			
+			{% for Product in posts %}<br><br><br><br><br>
+			
+			<h4 style="margin-top:-70px"><a href="{% url 'service_detail_history' pk=Product.pk %}">{{ Product.title }}</a></h4><hr>
+			{% endfor %}
+			
+			</div>
+			<div class="col-md-4">
+			<h3><label> CreatedOn: </label></h3><hr>
+			{% for Product in posts %}<br><br><br><br><br>
+            <h4 style="margin-top:-70px"><a href="{% url 'service_detail_history' pk=Product.pk %}"> {{ Product.date_created }}</a> </h4>
+			<hr>
+{% endfor %}
+
+</div>
+ <div class="col-md-3">
+			<h3><label> Edit Product: </label></h3><hr>
+			{% for Product in posts %}<br><br><br><br>
+            <h6 style="margin-top:-65px"><a href="{% url 'post_edit_service' pk=Product.pk %}"> <button type="submit" class="btn btn-info btn-lg"  >Edit Product</button></a></h6><hr>
+			
+            {% endfor %}
+            
+			</div>
+ {% else %}
+                        <h4 style="color:DarkCyan">STILL YOU HAVE NOT BEGIN CHARITY.</h4>
+<p>*There is no any past history of your Donation.</p>
+                {% endif %}
+            </div>
+			</div>
+			
+		            </div>
+			</div>
+	<script>	
+     $("#img88").elevateZoom({scrollZoom : true});
+    </script>
+{% endblock content %}
