@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^history/$', 'products.views.post_history', name='post_history'),
     url(r'^history/add/(?P<pk>[0-9]+)/$', 'products.views.post_detail_history', name='post_detail_history'),
     url(r'^historyS/$', 'products.views.service_history', name='service_history'),
+    url(r'^servicelist/$', 'products.views.servicelist', name='servicelist'),
  # Admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.urls')),
