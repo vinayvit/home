@@ -36,12 +36,9 @@ background:LightSteelBlue;
 }
 
 #myBODY {
-   background :url({% static "img/slider-intro-image2.jpg" %}) no-repeat center top;
-    background-size:100%;
+   background :url({% static "img/slider-intro-imageh2.jpg" %}) no-repeat center top;
    min-height: 620px;
-    weight:120px;
-    padding-top: 2%;
-    background-repeat: no-repeat;}
+   background-repeat: no-repeat;}
 
 
 </style>
@@ -64,7 +61,7 @@ background:LightSteelBlue;
 <li role="presentation" ><a href="{% url 'products' %}"><b>PRODUCT LIST</b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  {% if request.user.is_authenticated %}
 
-<a href="dashboard/"><button class="menu-button" align="left" values>Open Menu</button><span class="glyphicon glyphicon-user">USER</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="dashboard/"><button class="menu-button">Open Menu</button><span class="glyphicon glyphicon-user">USER</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button>
 {% else %}
 <button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">LOGIN HERE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -74,7 +71,7 @@ background:LightSteelBlue;
 </div>
     </div>
 
- <div id="myBODY">
+ <div class="container-fluid" id="myBODY">
 
   <div class="mtb">
                <div class="flexsearch">
@@ -96,7 +93,7 @@ background:LightSteelBlue;
       <div class="modal-content">
          <div class="modal-footer">
            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">LOGIN HERE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+          <h4 class="modal-title"><center>LOGIN HERE</center> </h4>
         </div>
         <div class="modal-body">
 <b>Already REGISTER Click Here <b>
@@ -126,7 +123,7 @@ background:LightSteelBlue;
                                 <a href="#" class="btn btn-success btn-lg" data-toggle="modal" id='rim1' data-target="#cls"><i class="fa fa-laptop"></i> <span class="network-name">Classified</span></a>
                             </li>
                             <li>
-                                <a href="/products/service/" class="btn btn-info btn-lg"><i class="fa fa-cog"></i> <span class="network-name">Services</span></a>
+                                <a href="/servicelist/" class="btn btn-info btn-lg"><i class="fa fa-cog"></i> <span class="network-name">Services</span></a>
                             </li>
                             <li>
                                 <a href="{% url 'event' %}" class="btn btn-warning btn-lg"><i class="fa fa-calendar"></i> <span class="network-name">Events</span></a>
@@ -237,18 +234,19 @@ background:LightSteelBlue;
 		</div>
 		<br><br>
 		</div>
-<div style="height:230px; background-color: LightSteelBlue">
+<div class="container-fluid" style="background-color: LightSteelBlue">
 
 
-    <div class="col-md-6" style="color:LightYellow; padding-top:10px">
+
+    <div class="col-md-6" style="color:LightYellow; ">
       <img src="{% static 'img/snap/index.jpeg' %}"class="img-circle">
       <p id="p1" style="color:LightYellow">"We think sometimes that poverty is only being hungry, uneducated and homeless. The poverty of being unwanted, unloved and uncared for is the greatest poverty. We must start in our own homes to remedy this kind of poverty."</h4>
      </div>
-    <div class="col-md-6" style=" height:200px; padding-top:10px">
+    <div class="col-md-6">
       <img src="{% static 'img/snap/index2.jpeg' %}"class="img-circle">
      <p id="p1" style="float:right; color:LightYellow">“When we feel love and kindness toward others, it not only makes others feel loved and cared for, but it helps us also to develop inner happiness and peace.”</h4>
     </div>
-</div></div>
+</div>
 
 
 <hr>
@@ -263,7 +261,7 @@ background:LightSteelBlue;
 
 <!----------------------------------------------------------CONTAINE FOR EVENT------------------------------>
 <div class="container-fluid">
-<div class="jumbotron" ><h1 style="padding-left:150px"/> <img src='{% static "img/snap/0charity.png" %}' class="img-responsive inline"/></h1>
+<div class="jumbotron" ><center> <img src='{% static "img/snap/0charity.png" %}' class="img-responsive inline"/></center>
 	</div>
 		</div>
 </div>

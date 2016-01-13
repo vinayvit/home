@@ -50,7 +50,7 @@ function resumeDiv() {
                 <!-- List of uploaded documents -->
                   <div class="container-fluid" style="width: auto; color:DarkCyan; background-color: ghostwhite"> 
          
-         <br> <div class="container-fluid">
+         <br> <div class="container-fluid" >
 
  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px; width:100%; ">
    <!-- Wrapper for slides -->
@@ -83,13 +83,6 @@ function resumeDiv() {
       </div>
 
    </div>
-
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="float:leftt; padding-right:126px; width:9px; height:0px; margin-top:177px; color:MidnightBlue">
-      
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="float:right; margin-right:96px; width:9px; height:0px; margin-top:177px; color:MidnightBlue">
      
     </a>
   </div>
@@ -123,18 +116,13 @@ function resumeDiv() {
 <a href="/products/enquiry/{{ event.user}}/"  class='btn btn-warning btn-block' role="button">{{  event.user }}</a>
 </div>
 </div>
-
-
 {% endfor %}
-
 </div><br>
  </div>
     <div class="row" style="width: auto; color:DarkCyan; background-color: Lavender"> 
     <div class="container-fluid"> 
 
 <div class="col-md-6">
- 
-
 <p><b><h2>REVEAL YOUR PERSONAL Event Details WITH US..</h2></b></p>
 <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
                  

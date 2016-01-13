@@ -291,6 +291,21 @@ def service_history(request):
     document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, 'products/service_list.html', {'posts': posts, 'document': document})
 
+def servicelist(request):
+    model = Service
+    post = Service.objects.all()
+    return render(request, 'products/service_home.html', {'post': post})
+
+def service_detail_home(request, pk):
+    model = Service, Document
+    #user_id=request.user.id
+    post = get_object_or_404(Service, pk=pk)
+    document = Document.objects.filter(user_id = post.user.id)[:1]
+    #document = Document.objects.filter(user_id = request.user.id)[:1]
+    return render(request, 'products/service_detail_home.html', {'post': post, 'document': document})
+
+
+
 
 
 

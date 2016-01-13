@@ -1,4 +1,4 @@
-{% extends 'base.html' %}<br><br><br>
+{% extends 'base.html' %}
 
 {% load staticfiles %}
 
@@ -24,11 +24,11 @@ E-CHARITYProducts
 {% block jumbotron2 %}
 <body>
 
-    <div id="wrapper" style="padding:1px;border:10px groove LightSteelBlue; background-color:LightSkyBlue">
+    <div id="wrapper" class="responsive-inline" style="padding:1px;border:10px groove LightSteelBlue; background-color:LightSkyBlue">
 
-  <div class="container-fluid">
+  <div class="container-fluid" class="responsive">
 <br>
- <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px; width:1060px; padding-left:60px">
+ <div id="myCarousel" class="carousel slide-responsive" data-ride="carousel" style="height:400px; width:1060px; padding-left:60px">
    <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox" style="width: 1060px;padding-left:10px">
       <div class="item active">

@@ -1,0 +1,113 @@
+{% extends "base.html"%}       
+{% load i18n %} 
+{% block content %}
+
+{% load staticfiles %}
+
+
+<head>
+    <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
+</head>
+<div class="container-fluid" style="height:100px; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br>
+<h1 style="color:white"><center><b>{% trans "Service Details" %}<b><center></h1></div>
+<div class="container-fluid">
+
+<div class="row">
+ <div class='col-md-1'></div>
+
+    <div class='col-md-5'>
+        
+  <div>
+	 <br><br>
+	 {% if post %}
+                        <ul><br>
+                        
+                                
+                               <img id="vin" src="{{ post.docfile.url }}"   style="width:330px; height:180px; border:1px solid brown; class="img-circle"  alt="{{ object.docfile.name }}">
+                                </a></li>
+                        
+                        </ul>
+                {% else %}
+                        <p><img id="blah" src="{% static 'img/snap/0noitem.gif' %}"   width="190px" height="230px" alt="No Image of item"/></p>
+                {% endif %}
+
+        </div>    <br>
+
+
+<h3 style="color:grey; padding-top:20px"><lable>{{ post.description }}</lable></h3>     
+          
+</div>
+
+    <!-- Product Sidebar --> 
+    <div class='col-md-5'>
+       
+<br>
+
+
+<h3 style="color:grey;"><lable>{{post.title}}</lable></h3>
+       <br>
+{% if document %}
+     {% for document in document %}
+                               <h4 data-toggle="modal" id='rim' data-target="#event">  <img src="{{ document.docfile.url }}" class="img-circle" id="circle" alt="{% static 'assets/img/find_user.png' %}" width="160px" height="150px"/>{{document.firstname}}&nbsp;{{ document.lastname}}</h4><h6>*use this name for message or request.</h6>
+                      {% endfor %}
+          
+                        {% else %}
+                      <h4> <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle" id="circle"   alt="your selected item"/></img>{{post.user}}</h4>
+{% endif%}
+
+<br>
+        <h3 style="color:grey;"><lable>Post On:{{ post.date_created }}</lable></h3>
+       <br>
+        <h3 style="color:grey;"><lable>Expire On:{{post.expire_date}}</lable></h3>
+       <br>
+       <br>
+
+
+
+<a href="/products/enquiry/{{ post.user}}/"><input type="submit" class="btn btn-info btn-lg"  value="{% trans "Excahnge/Donate" %}&raquo;"/></a>
+   
+ </div>
+</div>
+</div>
+</div>	      
+
+<center><a href="{% url 'servicelist' %}">
+                    <i class="fa fa-external-link">
+  <b><h4>BACK TO SERVICE LIST</h4><b></i></a></center>
+<div class="container-fluid" style="height:100px; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br> 
+<h4>Related Project.......</h4><center></center>
+        
+    </div>
+{% for document in document %}
+ <div class="modal fade" id="event" role="dialog">
+<div class="modal-dialog modal-sm">
+      <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                      
+          <h4 class="modal-title"><center>Profile</center> </h4>
+        </div>
+
+<div class="container-fluid">
+
+                               <h4 >  <img src="{{ document.docfile.url }}" class="img-circle" id="circle" alt="{% static 'assets/img/find_user.png' %}" width="160px" height="150px"/>{{document.firstname}}&nbsp;{{ document.lastname}}</h4>
+
+<h4>User Name : {{  post.user }}</h4>
+<h5>Joined Us: {{ post.user.date_joined|date:"d M Y" }}</h5>
+<h5>{{ event.user.email}}</h5>
+<h5>Address: {{ document.address}}</h5></div>
+<div class="modal-footer">
+                      
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+</div>
+      </div>
+
+    </div></div>
+{% endfor %}
+
+<script>	
+     $("#vin").elevateZoom({scrollZoom : true});
+    </script>
+{% endblock %}

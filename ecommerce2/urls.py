@@ -23,10 +23,15 @@ urlpatterns = [
     url(r'^profiles/$', 'dashboard.views.profiles', name='profiles'),
     #url(r'^dashboard/', include(router.urls)),
  # Product:
-    url(r'^$', 'products.views.home', name='home'),
+     url(r'^$', 'products.views.home', name='home'),
     url(r'^products/', include('products.urls')),
     url(r'^history/$', 'products.views.post_history', name='post_history'),
     url(r'^history/add/(?P<pk>[0-9]+)/$', 'products.views.post_detail_history', name='post_detail_history'),
+    url(r'^historyS/$', 'products.views.service_history', name='service_history'),
+    url(r'^servicelist/$', 'products.views.servicelist', name='servicelist'),    
+    url(r'^history/service/(?P<pk>[0-9]+)/$', 'products.views.service_detail_history', name='service_detail_history'),
+    url(r'^service/(?P<pk>[0-9]+)/$', 'products.views.service_detail_home', name='service_detail_home'),
+    #service
     url(r'^historyS/$', 'products.views.service_history', name='service_history'),
  # Admin:
     url(r'^admin/', include(admin.site.urls)),

@@ -4,40 +4,28 @@
 
 <div class="navbar-default navbar-bottom" role="navigation" style="background-color: #383838">
 <div class="container-fluid">
-
-<ul class="nav navbar-nav navbar-center" style="color: White">
+<div class="row">
+<div class="col-md-9">
 <div class="tab lable" style="padding-top: 5px"> <!-- Only required for left/right tabs -->
-<ul class="nav nav-tabs">
+<ul class="nav nav-pills" style="color: White">
  <li role="presentation" ><a href="{% url 'about' %}"><b>ABOUT US</b></a></li>
  <li role="presentation"><a href="{% url 'gallery' %}"><b>GALLERY</b></a></li>
   <li role="presentation"><a href="{% url 'faq' %}"><b>FAQ</b></a></li>
  <li role="presentation"><a href="{% url 'service' %}"><b>OUR SERVICES</b></a></li>
   <li role="presentation"><a href="{% url 'term' %}"><b>TERMS OF USE</b></a></li>
-  <li role="presentation"><a href="{% url 'contact' %}"><b>CONTACT US</b></a></li>
-
-<div class="social-icons pull-right" style="padding-left:330px; padding-top: 10px">
-
+  <li role="presentation"><a href="{% url 'contact' %}"><b>CONTACT US</b></a></li></ul>
+</div>
+</div>
+                <div class="col-md-3">
+<div class="social-icons pull" style="padding-top:10px">
                         <ul class="nav nav-pills" value="Follow Us:">
                             <li><a href=""><i class="fa fa-facebook"></i></a></li>
                             <li><a href=""><i class="fa fa-twitter"></i></a></li>
                             <li><a href=""><i class="fa fa-google-plus"></i></a></li>
                             <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li></ul>
-<li><h5>@ Copyright 2015 all rights are reserved</h5></li>
-                        </ul>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+<li><h5 style="color: White">@ Copyright 2015 all rights are reserved</h5></li></ul></div></div></div>
                     </div> 
-
                     </div> 
-                        
-                       
-                          </ul>
-
-
-</div>
-</div>
-  </div>
-
-
-
 {% endblock %}
  
