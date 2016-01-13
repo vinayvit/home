@@ -7,21 +7,15 @@ from products.models import ProductManager, Product
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.utils import timezone
-# Custom Imports
-#from .forms import PostForm, PostImgForm
-#from .forms import VariationInventoryForm
 from .models import Product, Variation
 from .models import Slider
 from .models import Product, Service
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
-
-
 from .forms import PostForm,ServiceForm
 from .models import Product1
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
@@ -290,6 +284,11 @@ def service_history(request):
     posts = Service.objects.filter(user_id = request.user.id)
     document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, 'products/service_list.html', {'posts': posts, 'document': document})
+    
+def servicelist(request):
+    model = Service
+    post = Service.objects.all()
+    return render(request, 'products/service_home.html', {'post': post})
 
 def servicelist(request):
     model = Service
@@ -303,15 +302,6 @@ def service_detail_home(request, pk):
     document = Document.objects.filter(user_id = post.user.id)[:1]
     #document = Document.objects.filter(user_id = request.user.id)[:1]
     return render(request, 'products/service_detail_home.html', {'post': post, 'document': document})
-
-
-
-
-
-
-
-
-
 
 
 
