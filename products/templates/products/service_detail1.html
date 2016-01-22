@@ -1,36 +1,45 @@
 {% extends "dashboard.html"%}
 
 {% block content %}
-<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h2 style="color:white"><center><b>"DETAILS OF SERVICE"<b></center></h2><br><br><hr/>
-<div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: PaleTurquoise">
-    <u><h3 style="color:DarkCyan">{{post.title}}.</h3></u><br>
+{% load staticfiles %}
+<head>
+	
+	<link rel="stylesheet" href="{% static 'css/style1.css' %}"> <!-- Resource style -->
+	</head>
+
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
+	
+<h3 style="color:#797980"><center><b>POST SERVICE DETAIL<b></center></h3>
+</div>
+<div class="container-fluid" style="height:auto; width: auto; color:DarkCyan; background-color: white">
+      <h3 style="color:#3b5998; margin-left:50px">{{post.title}}</h3>
         
 
-    <div class='col-sm-4'>
+    <div class='col-sm-6' id="over">
 
-         {% load staticfiles %}
-        <div><br>
-			
-			<br>
-                        <ul><br>
-                        
-                                <img src="{{ post.docfile.url }}" style="width:330px; height:200px; border:1px solid brown; class="img-circle" alt="{{ post.docfile.name }}">
+         
+         
+        <div>
+           
+            
+                        <ul>
+                       
+                                <img src="{{ post.docfile.url }}" style="height:40%; width:450%;" class="img-responsive" alt="{{ post.docfile.name }}">
 
-                                
+                               
                                 </a></li>
-                        
+                       
                         </ul>
-              
-			{% if post %}<br>
              
+            
+            
         </div> 
-        
     </div>
-
+<div class='col-sm-1'>
+	</div>
     <!-- Product Sidebar --> 
-    <div class='col-sm-6'style="padding-left:200px">
-        <a class="btn btn-default" href="{% url 'post_edit_service' pk=post.pk %}">EDIT YOUR SERVICE</a>
+    <div class='col-sm-5'>
+         
         {% if object.variation_set.count > 1 %}
             <select class="form-control">
                 {% for vari_obj in object.variation_set.all %}
@@ -38,26 +47,31 @@
                 {% endfor %}
             </select>
         {% endif %}
-        <br/>
-		 
+        
+        <h4 style="color:#434343;"><lable><i class="fa fa-calendar">From:</lable></h4></i>
+     <h4 style="color:#3b5998;">  {{post.date_Update|date:"d M Y"}}</h4>
+     
+     
+     
+       	
+        <h4 style="color:#434343;"><lable><i class="fa fa-calendar"> Till:</lable></h4></i>
+      <h4 style="color:#3b5998"> {{post.expire_date|date:"d M Y"}}</h4>
+      
+      	
+        <h4 style="color:#434343;"><lable><i class="fa fa-home">Location:</lable></h4></i>
        
-	    
-        <h3 style="color:brown;"><lable>Available From:</lable></h3>
-       {{post.date_Update}}<br>
-        <h3 style="color:brown;"><lable>Available Till:</lable></h3>
-       {{post.expire_date}}<br> 
-        <h3 style="color:brown;"><lable>Location:</lable></h3>
-       {{post.address}}
+   <h4 style="color:#3b5998;">    {{post.address}}</h4>
        
        
-       
+  <h5 style="color:#434343;">  Update Service<a class="btn btn-default"href="{% url 'post_edit_service' pk=post.pk %}"> <i class="fa fa-pencil-square-o"></i>
+</a>  </h5>  
     </div>
-	<div class="row">
-	<div class="col-sm-9">
-	<h3 style="color:brown; padding-top:20px"><lable>Description:</lable></h3>     
-          <p><h4>{{ post.description }}</h4></p>
+	<div class="row-fluid">
+	<div class="col-sm-12">
+	  
+          <p><h4 style="color:#3b5998; margin-left:50px">{{ post.description }}</h4></p>
 		</div>
       </div> 
     </div>
-</div>{% endif %}
+</div>
 {% endblock %}

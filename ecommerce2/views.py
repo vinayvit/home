@@ -9,7 +9,7 @@ def about(request):
 def faq(request):
 	return render(request, "faq.html", {})
 
-def service(request):
+def services(request):
 	return render(request, "service.html", {})
 
 def term(request):

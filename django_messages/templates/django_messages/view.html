@@ -1,12 +1,12 @@
-{% extends "dashboard.html" %}        
+{% extends "dash.html" %}        
 {% load i18n %}
 {% load url from future %}
 {% load crispy_forms_tags %}        
 {% block content %}
 <body>
-<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
 <h1 style="color:white"><center><b>{% trans "View Message" %}<b><center></h1><br>
-<div class="container-fluid" style="height:130%; width: auto; color:grey; background-color: ghostwhite">
+<div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: ghostwhite">
 <h2><strong>{{ message.subject }}</strong></h2>    <div class="col-md-9"></div>{{ message.sent_at|date:_("DATETIME_FORMAT")}}<br>
 {% ifequal message.recipient.pk user.pk %} 
 <div class="col-md-9"></div>
@@ -20,7 +20,7 @@
 <hr>
 <h5>{{ message.recipient }}</h5>
 <div class="container-fluid">
-<div class="col-md-1"></div><div class="col-md-9">{{ message.body|linebreaksbr }}</div><br><br><br>
+<div class="col-md-1"></div><div class="col-md-9">{{ message.body|linebreaksbr }}</div><br><br><br><br><br><br><br><br><br><br><br>
  
 
 
@@ -32,8 +32,8 @@
 {{ form|crispy }}
 
 <input type="submit" value="{% trans "Send" %} &raquo;"/>
-</form></div></div>
+</form></div> </div><br><br><br><br>
 {% endif %}
-{% endcomment %}</div> </div>
+{% endcomment %}</div></div> <br></div>
 </body>
 {% endblock %}

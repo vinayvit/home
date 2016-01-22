@@ -27,7 +27,7 @@
 <link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
     <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
 	<!-- BOOTSTRAP STYLES-->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=arctik" />
      <!-- FONTAWESOME STYLES-->
     <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
 <script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
@@ -40,12 +40,11 @@
 
 
 </head>
-<body>
 
 {% include "products/header.html" %}
 </div>
-<div id="wrapper" class="responsive" style="background-color:DarkCyan">
-   <nav class="navbar-default navbar-side" role="navigation" style="background-color:DarkCyan">
+<div id="wrapper" class="responsive">
+   <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collaps">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
@@ -74,19 +73,19 @@
                         <a href="/products/list/ "><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
                     </li>
 		<li>
-                        <a href="/products/service/ "><i class="fa fa-square fa-3x"></i> GIVE SERVICE'S</a>
+                        <a href="/products/service/ "><i class="fa fa-square fa-3x"></i> GIVE SERVICE</a>
                     </li>
 		 <li>
-                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>POST EVNTS</a>
+                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>OFFER EVNTS</a>
                     </li>
  			<li>
                         <a href="#"><i class="fa fa-sitemap fa-3x"></i> HISTORY<span class="fa arrow"></span></a>
                         <ul class="nav nav-default">
                             <li>
-                                <a href="{% url 'post_history' %} "><i class="fa fa-laptop fa-3x"></i>Product history</a>
+                                <a href="{% url 'post_history' %} "><i class="fa fa-laptop fa-3x"></i>Product History</a>
                             </li>
                             <li>
-                                <a href="{% url 'service_history' %}"><i class="fa fa-bolt fa-3x"></i>Service</a>
+                                <a href="{% url 'service_history' %}"><i class="fa fa-bolt fa-3x"></i>Service History</a>
                             </li>
                               <li>
                                  <a href="{% url 'devent_detail' %}"><i class="fa fa-bar-chart-o fa-3x"></i>Event History</a>
@@ -94,10 +93,10 @@
                         </ul>
                       </li>	
                       <li>
-                        <a href="{% url 'profiles' %} "><i class="fa fa-table fa-3x"></i> PROFILE</a>
+                        <a href="{% url 'profiles' %} "><i class="fa fa-table fa-3x"></i>PROFILE</a>
                     </li>	
                       <li>
-			<a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>EDIT PROFILE</a>
+			<a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>CREATE PROFILE</a>
                     </li>
                       	
                 </ul>
@@ -107,68 +106,19 @@
         </nav>  
 
         <!-- /. NAV SIDE  -->
-        <div id="page-wrapper" style="background-color:LightSkyBlue">
-            <div id="page-inner" style="background-color:LightSkyBlue">
-                <div class="row" >
-                    <div class="col-md-12" style="background-color:LightSkyBlue">
-                     <h1 style="font-family: oswald; color:DarkCyan">Dashboard</h1>   
+        <div id="page-wrapper" >
+            <div id="page-inner" >
+                <div class="row"  >
+                    <div class="col-md-12">
+
                        <a href="{% url 'profiles' %} ">
- <h3 style="font-family:oswald; color:white">Welcome  <b>{{ request.user.username }}</b></a>
+ <h2 style="font-family:arctik;color:#FF8000">Hi  <b>{{ request.user.username }}</b></h2></a>
                     </div>
-                 </div>            
+                            
                  <!-- /. ROW  -->
                   
-                <div class="row"style="background-color:LightSkyBlue" >
-                <div class="col-md-3 col-sm-6 col-xs-6"style="background-color:LightSkyBlue">           
-		<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-red set-icon" style="padding-top: 20px">
-                 <i class="fa fa-envelope-o"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="main-text"></p>
-                    <a href="{% url 'messages_inbox' %}"><p class="text-muted">INBOX</p></a>
-                </div> 
-             </div>
-		     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-green set-icon"  style="padding-top: 20px">
-                    <i class="fa fa-external-link"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="main-text"></p>
-                    <a href="{% url 'messages_outbox' %}"><p class="text-muted">OUTBOX</p></a>
-                </div>
-             </div>
-		     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-blue set-icon"  style="padding-top: 20px">
-                    <i class="fa fa-pencil-square-o"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="main-text"></p>
-                    <a href="{% url 'messages_compose' %}"><p class="text-muted">TEXT</p></a>
-                </div>
-             </div>
-		     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-brown set-icon"  style="padding-top: 20px">
-                    <i class="fa fa-trash-o"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="main-text"></p>
-                    <a href="{% url 'messages_trash' %}"><p class="text-muted">TRASH</p></a>
-                </div>
-             </div>
-		     </div>
-			
-          <hr>
-      
-  
-<hr>
-<!-- end .container-fluid_12 -->
+               
+
 
 
 </div>
@@ -179,10 +129,10 @@
                  <!-- /. ROW  -->
 {% block content %}
 {% endblock %}
-       </div>   </div>     </div>     
+       </div>   </div>    </div>   
 {% include "products/footer1.html" %}
 
  
-</body>
+
 </html>
 

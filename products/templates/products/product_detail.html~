@@ -8,7 +8,7 @@
 <head>
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
 </head>
-<div class="container-fluid" style="color:DarkCyan; background-color: GhostWhite "><br>
+<div class="container-fluid" style="color:#58FA58; background-color: GhostWhite "><br>
 <br>
 <div class="container">
 <div class="row">
@@ -72,7 +72,7 @@
 <center><a href="{% url 'products' %}">
                     <i class="fa fa-external-link">
   <b><h4>BACK TO PRODUCT LIST</h4><b></i></a></center> </div>
-<div class="container-fluid" style="height:100px; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br> 
+<div class="container-fluid" style="height:100px; width: auto; color:#58FA58; background-color: PaleTurquoise"><br> 
 <h4>Related Project.......</h4><center></center>
         
     </div>

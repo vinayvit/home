@@ -29,6 +29,11 @@
 <script src="{% static 'js/classie2.js' %}"></script>
 	<!-- BOOTSTRAP STYLES-->
     <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+<style>
+   a {
+      text-decoration:none;
+   }
+</style>
      <!-- FONTAWESOME STYLES-->
     <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
 <script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
@@ -42,9 +47,9 @@
 
 {% include "products/header.html" %}
 
-<div id="wrapper" style="background-color:DarkCyan">
+<div id="wrapper">
    
-   <nav class="navbar-default navbar-side" role="navigation" style="background-color:DarkCyan">
+   <nav class="navbar-default navbar-side" role="navigation" >
             <div class="sidebar-collaps" >
                 <ul class="nav" id="main-menu" >
 
@@ -72,11 +77,11 @@
                         <a href="{% url 'list' %}"><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
                     </li>
 		<li>
-                        <a href="/products/service/ "><i class="fa fa-square fa-3x"></i> GIVE SERVICE'S</a>
+                        <a href="/products/service/ "><i class="fa fa-square fa-3x"></i> GIVE SERVICE</a>
                     </li>
 
  			<li>
-                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>POST EVNTS</a>
+                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>OFFER EVNTS</a>
                     </li>
 			<li>
                         <a href="#"><i class="fa fa-sitemap fa-3x"></i> HISTORY<span class="fa arrow"></span></a>
@@ -85,7 +90,7 @@
                                 <a href="{% url 'post_history' %} "><i class="fa fa-laptop fa-3x"></i>Product History</a>
                             </li>
                             <li>
-                                <a href="{% url 'service_history' %}"><i class="fa fa-bolt fa-3x"></i>Service's History</a>
+                                <a href="{% url 'service_history' %}"><i class="fa fa-bolt fa-3x"></i>Service History</a>
                             </li>
                               <li>
                                  <a href="{% url 'devent_detail' %}"><i class="fa fa-bar-chart-o fa-3x"></i>Event History</a>
@@ -96,7 +101,7 @@
                         <a href="{% url 'profiles' %} "><i class="fa fa-table fa-3x"></i> PROFILE</a>
                     </li>	
                       <li>
-			<a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>EDIT PROFILE</a>
+			<a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>CREATE PROFILE</a>
                     </li>
                   
                 </ul>

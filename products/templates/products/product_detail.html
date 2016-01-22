@@ -8,7 +8,7 @@
 <head>
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
 </head>
-<div class="container-fluid" style="color:DarkCyan; background-color: GhostWhite "><br>
+<div class="container-fluid" style="color:grey; background-color: GhostWhite "><br>
 <br>
 <div class="container">
 <div class="row">
@@ -55,10 +55,10 @@
         <h3 style="color:grey;"><lable>Expire On:{{object.expire_date|date:"d M Y"}}</lable></h3>
 			
 	 	</div>
-			<a href="/products/enquiry/{{ object.user}}/"> <div class='col-sm-6'><h3 style="color:grey;">Donated By: {{ object.user}}<br/>
+			<a href="/products/enquiry/{{ object.user}}/"style="color:#428BCA"> <div class='col-sm-6'><h3 style="color:grey;">Donated By: {{ object.user}}<br/>
 <h6>*use this name for message or request.</h6><hr/></div></a>
 	 <div class='col-sm-6 pull-center'>
-			 	<br> <a href="/products/enquiry/{{ object.user}}/"><input type="submit" class="btn btn-info btn-lg"  value="{% trans "Excahnge/Donate" %}&raquo;"/></a>
+			 	<br> <a href="/products/enquiry/{{ object.user}}/"style="color:#428BCA"><input type="submit" class="btn btn-info btn-lg"  value="{% trans "Excahnge/Donate" %}&raquo;"/></a>
 	 	</div></div>
  <div class='col-sm-8 pull-left'>
 			 	 
@@ -72,7 +72,7 @@
 <center><a href="{% url 'products' %}">
                     <i class="fa fa-external-link">
   <b><h4>BACK TO PRODUCT LIST</h4><b></i></a></center> </div>
-<div class="container-fluid" style="height:100px; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br> 
+<div class="container-fluid" style="height:100px; width: auto; color:grey; background-color: PaleTurquoise"><br> 
 <h4>Related Project.......</h4><center></center>
         
     </div>

@@ -3,66 +3,146 @@
 {% block content %}
 {% load staticfiles %}
 <head>
+	
+	  <style>
+		#hover:hover
+		{
+    background-color: white;
+    
+} 
+
+.text
+{
+	border: 1px solid #eeeeee;
+	background-color: #eeeed1;
+}
+
+</style>
+	
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
 </head>
-   <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h2 style="color:white"><center><b>"PAST DETAILS OF YOUR DONATION"<b></center></h2><br><br><hr/>
-<div class="container-fluid" style="height:130%; width: auto; color:skyblue; background-color: ghostwhite">
-    <u><h3 style="color:SteelBlue">Edit OR View Your Past Action with US.</h3></u><br>
+   <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
+<h3 style="color:#797980"><center><b>PAST DETAILS OF YOUR SERVICE<b></center></h3>
+<div class="container-fluid" style="height:auto; width: auto; color:#797980;  background-color: white">
+{% if posts %}
+    <div class="row">
+        <div class="col-md-3">
+		<h4><label> ServiceImage</label></h4>	
+		</div>
+		<div class="col-md-3">
+			<h4><label> Title </label></h4>
+		</div>
+		
+		<div class="col-md-4">
+			<h4><label> CreatedOn </label></h4>
+		</div>
+		
+		<div class="col-md-2">
+			<h4><label> Edit </label></h4>
+		</div>
+		
+		</div>	
+    
+    {% for Product in posts %}
+     <div id="hover" class="text">
+       <br> 
 	    <div class="row">
         <div class="post">
 		{% if posts %}
            <div class="col-md-3" >
-  
-			   
-			<h3><label> ProductImage</label></h3><hr>
-			  {% for Product in posts %}
-			
                         <ul>                               
-                          <a href="{% url 'service_detail_history' pk=Product.pk %}">  <img id="img88" src="{{ Product.docfile.url }}" width="60px" height=60px" alt="{{ Product.docfile.name }}"></a>
+                          <a href="{% url 'service_detail_history' pk=Product.pk%}">  <img id="img88" src="{{ Product.docfile.url }}" width="60px" height=60px" alt="{{ Product.docfile.name }}"></a>
                                </li>
                         
                         </ul>
-               <hr>
-                {% endfor %}
+               
                 
 			</div>
             
-			<div class="col-md-2">
-			<h3><label> Title: </label></h3><hr>
+			<div class="col-md-3">
+	
 			
-			{% for Product in posts %}<br><br><br><br><br>
 			
-			<h4 style="margin-top:-70px"><a href="{% url 'service_detail_history' pk=Product.pk %}">{{ Product.title }}</a></h4><hr>
-			{% endfor %}
+                              <br><br><br><br>
 			
+			<h5 style="margin-top:-70px"><a href="{% url 'service_detail_history' pk=Product.pk %}" style="text-decoration:none;color:#428BCA">{{ Product.title }}</a></h5>
+			
+                              
 			</div>
 			<div class="col-md-4">
-			<h3><label> CreatedOn: </label></h3><hr>
-			{% for Product in posts %}<br><br><br><br><br>
-            <h4 style="margin-top:-70px"><a href="{% url 'service_detail_history' pk=Product.pk %}"> {{ Product.date_created }}</a> </h4>
-			<hr>
-{% endfor %}
-
-</div>
- <div class="col-md-3">
-			<h3><label> Edit Product: </label></h3><hr>
-			{% for Product in posts %}<br><br><br><br>
-            <h6 style="margin-top:-65px"><a href="{% url 'post_edit_service' pk=Product.pk %}"> <button type="submit" class="btn btn-info btn-lg"  >Edit Product</button></a></h6><hr>
+		
 			
-            {% endfor %}
-            
-			</div>
- {% else %}
-                        <h4 style="color:DarkCyan">STILL YOU HAVE NOT BEGIN CHARITY.</h4>
-<p>*There is no any past history of your Donation.</p>
-                {% endif %}
+                              <br><br><br><br>
+            <h5 style="margin-top:-70px"><a href="{% url 'service_detail_history' pk=Product.pk %}" style="text-decoration:none;color:#428BCA"> {{ Product.date_created }}</a> </h5>
+			
+
+                              </div>
+ <div class="col-md-2">
+
+			
+                              <br><br><br><br>
+           
+			
+                 
+  <h5 style="color:black; margin-top:-70px"><a class="btn btn-default"href="{% url 'post_edit_service' pk=Product.pk %}" style="color:#428BCA"> <i class="fa fa-pencil-square-o"></i>
+</a>  </h5>  
+ {% endif %}
             </div>
 			</div>
 			
 		            </div>
-			</div>
+{% endfor %}
+			
+			{% else %}
+                        
+<h3  style="color:#170f3d;">There is no any past Service history ..................</h3><br><br><br><br><br><br><br><br><br><br>
+			{% endif %}
+			
+			
+			
+			
+			
+			
+			
+			</div><br><br><br></div>
 	<script>	
      $("#img88").elevateZoom({scrollZoom : true});
     </script>
 {% endblock content %}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

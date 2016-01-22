@@ -10,7 +10,8 @@
 <body>
   <div class="intro-header">
   <h1 >Welcome <a href="{% url 'profiles' %} "><b>{{ request.user.username }}</b> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1><br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1><br> 
         <div class="container-fluid">
   
             <div class="row"> <div class="col-lg-2"></div>
@@ -19,44 +20,40 @@
 <div class="row"style="padding-left: 30px" >
               <a href="{% url 'messages_inbox' %}">  <div class="col-md-3 col-sm-6 col-xs-6">           
 		<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-red set-icon" style="padding-top: 20px">
+                <span class="icon-box bg-color-red set-icon" style="padding-top: 15px">
                  <i class="fa fa-envelope-o"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text"></p>
-                    <p class="text-muted">INBOX</p>
+                         <p class="text-muted">INBOX</p>
                 </div> 
              </div>
 		     </div></a>
                     <a href="{% url 'messages_outbox' %}"> <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-green set-icon"  style="padding-top: 20px">
+                <span class="icon-box bg-color-green set-icon"  style="padding-top: 15px">
                     <i class="fa fa-external-link"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text"></p>
                    <p class="text-muted">OUTBOX</p>
                 </div>
              </div>
 		     </div></a>
                    <a href="{% url 'messages_compose' %}"> <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-blue set-icon"  style="padding-top: 20px">
+                <span class="icon-box bg-color-blue set-icon"  style="padding-top: 15px">
                     <i class="fa fa-pencil-square-o"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text"></p>
                     <p class="text-muted">TEXT</p>
                 </div>
              </div>
 		     </div></a>
                   <a href="{% url 'messages_trash' %}">   <div class="col-md-3 col-sm-6 col-xs-6">           
 			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-brown set-icon"  style="padding-top: 20px">
+                <span class="icon-box bg-color-brown set-icon"  style="padding-top: 15px">
                     <i class="fa fa-trash-o"></i>
                 </span>
                 <div class="text-box" >
-                    <p class="main-text"></p>
                    <p class="text-muted">TRASH</p>
                 </div>
              </div>

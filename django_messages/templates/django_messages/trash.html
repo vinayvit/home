@@ -1,12 +1,12 @@
-{% extends "dashboard.html" %}        
+{% extends "dash.html" %}        
 {% load i18n %} 
 {% load url from future %}
 
 {% block content %}
 <body>
-<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h1 style="color:white"><center><b>{% trans "Deleted Message" %}<b><center></h1><br>
-<div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: white">
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
+<h1 style="color:white"><center><b>{% trans "Deleted Messages" %}<b><center></h1><br>
+<div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: white">
 {% if message_list %} 
 
 <div class="row">
@@ -35,10 +35,9 @@
 {% endfor %}
    
 {% else %}
-<p><h1>{% trans "There is no Trash messages in Your Box.."  %}</h1></p>
+<p><h1>{% trans "There is no messages in your box.."  %}</h1></p>
 {% endif %}   
 <br />
-<p>{% trans "Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage." %}</p></div>
-</div> 
+<p>{% trans "Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage." %}</p><br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br> </div><br><br> </div>
 </body>
 {% endblock %}

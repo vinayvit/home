@@ -46,6 +46,17 @@ background:white;
 .modal-footer,.modal-header{
 background:LightSteelBlue;
 }
+#hover:hover
+	{
+    background-color: white;
+    
+} 
+
+.text
+{
+	border: 1px solid #eeeeee;
+	background-color: #eeeed1;
+}
 
 #myBODY {
    background :url({% static "img/slider-intro-image2.jpg" %}) no-repeat center top;

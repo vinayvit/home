@@ -5,41 +5,48 @@
 
 {% block content %}
 {% load static %}
-<div class="container-fluid">
-<div class="jumbotron"><img src='{% static "img/snap/1login.png" %}'
-	</div>
-		</div>
-<div class="container-fluid">
-<div class='row'>
-<div class="col-md-1"></div>
+<div class="container-fluid" style="width: auto;  color:GhostWhite; background :url({% static "img/intro-bg.jpg" %}) no-repeat center top"> 
+<br><br><br><br><br><br>
+	<div class="row">
 <div class="col-md-4">
-  <form>
-<div>
-  <a href="#"><img src='{% static "img/fb.png" %}' id="loginBtn" onclick="logIn();" value="Login" /></a></div><br>
-<div>
-  <a href="http://www.twitter.com"><img src='{% static "img/tw.png" %}'/></a></div><br>
-<div>
-  <a href="http://www.gmail.com"><img src='{% static "img/gplus.png" %}' /></a></div><br>
-  </form>
-<div><a href="{% url 'registration_register' %}" class="btn btn-info btn-l square-btn-adjust">REGISTRATION FOR THE NEW USER </a></div>        
- </div>
-<div class="col-md-7">
-<b><h1>Login</h1><b>
+  </div>
+<div class="col-md-4" style="padding:1px;border:1px groove LightSteelBlue; background-color:#A4A4A4">
+<center><b><h1>Login</h1><b></center>
+<div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+
 <form method="post" action=".">
+
   {% csrf_token %}
   {{ form|crispy }}
 
-  <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Submit' %}" />
+ <center> <input class="btn btn-primary" type="submit" href="{% url 'list' %}" value="{% trans 'Submit' %}" /></center>
   <input type="hidden" name="next" value="{{ next }}" />
 
-</form>
+</form></div></div>
+<h6 align="right">{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}" style="color:#428BCA">{% trans "Reset it !" %}</a></h6>
+<center><h4><b>Not a member yet ?<a href="{% url 'registration_register' %}" style="color:#428BCA"> Sign up here</a></b></h4></center>
 <hr/>
-<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p><br>
+ <form>
+<div>
+<center>Or Social Log-In with</center>
+<div class="col-sm-2"></div>
+<div class="col-sm-3">
+ <a href="http://www.twitter.com"><img src='{% static "img/t.png" %}'/></a></div>
+<div class="col-sm-3">
+ <a href="#"><img src='{% static "img/f.png" %}' id="loginBtn" onclick="logIn();" value="Login" /></a></div>
+<div class="col-sm-3">
+ <a href="http://www.gmail.com"><img src='{% static "img/g.png" %}' /></a></div>
+  </form></div> <br><br><br> <br> 
+</div>
+</div>
+<br><br><br><br><br><br>
 </div>
 
-
-</div>
  
-</div>
-</div>
+
+
+
+
 {% endblock %}

@@ -3,15 +3,19 @@
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 <link href="{% static 'css/datetimepicker.css' %}" rel="stylesheet" />
-<script src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
-<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
    <body>
-   <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h1 style="color:white"><center><b>"DONATE OR   PUBLISH  YOUR PRODUCT"<b></h1></center><br><h6>*For the Previous Product details check-out your History</h6>
-<div class="container-fluid" style="height:150%; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br>
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
+<h1 style="color:white"><center><b>Donate Or Publish  Your Product<b></h1></center>
+<div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: ghostwhite"><br><br>
+<div class="row">
+<div class="col-md-2">
+  </div>
+<div class="col-md-7" style="padding:1px;border:1px groove SteelBlue; background-color:white">
+<center><b><h1>Submit Details</h1><b></center><hr>
+<div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-9">
 
-                <div class="margin" style="margin-left:5%"> 
-                    <h3 style="color:DarkCyan; padding-left:10%">Enter the valuable details of your Donating Things</h3></div><br>
                 <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         
@@ -19,12 +23,15 @@
                         
                        <br>
                         
-                       <div class="margin" style="margin-left:120px">
-                        <button type="submit" class="btn btn-info btn-lg" style="margin-left:30%" >Publish Product</button>
+                       </div></div>
+                       <center> <button type="submit" class="btn btn-info btn-lg"  >Publish Product</button></center><br><br>
                         </div>
                 </form>
-                </div>
+                </div> <br><br> </div><br>
 
 </div>
+
+<script src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
+<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
 </body>
   {% endblock %}

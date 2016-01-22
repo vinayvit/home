@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 {% load staticfiles %}  
-
-<img src= "{% static 'img/snap/about1.png' %}" class="img-responsive"/>
+<body>
+        <div class="row-fluid">
+<img src= "{% static 'img/snap/about1.png' %}" class="vertical-center"/>
+</div>
 <div class="container-fluid" style="background-color: #81b1c9">
+
     <section id="company-information" class="padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="container-fluid">
 
@@ -253,7 +256,8 @@
                                 </div>
                             </div>
                        
-
+ </div>
+                            
                     <!-- Controls -->
                     <a class="left team-carousel-control hidden-xs" href="#team-carousel" data-slide="prev">left</a>
                     <a class="right team-carousel-control hidden-xs" href="#team-carousel" data-slide="next">right</a>
@@ -271,7 +275,7 @@
     <script type="text/javascript" src="{% static 'fotter/js/lightbox.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'fotter/js/wow.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'fotter/js/main.js' %}"></script> 
- 
+ </body>
 </html>
 {% endblock %}
 

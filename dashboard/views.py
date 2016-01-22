@@ -23,13 +23,13 @@ from .forms import DocumentForm, EventForm ,EvtForm
 @login_required
 def dashboard(request):
     model = Document, User
-    document = Document.objects.filter(user_id = request.user.id)[:1]
+    document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
     return render(request, "tag.html", {'document':document})
 
 @login_required
 def profiles(request):
     model = Document, User
-    document = Document.objects.filter(user_id = request.user.id)[:1]
+    document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
     return render(request, "profil.html", {'document':document})
 
 
@@ -48,7 +48,7 @@ def edit(request):
         form = DocumentForm() # A empty, unbound form
 
    # Load documents for the list page
-    document = Document.objects.filter(user_id = request.user.id)[:1]
+    document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
    
 
     # Render list page with the documents and the form
@@ -62,7 +62,7 @@ def event(request):
     model = Event,User
     event = Event.objects.all()
 
-    document = Document.objects.filter( user_id = request.user.id)[:1]
+    document = Document.objects.filter( user_id = request.user.id).order_by('-docfile')[:1]
 
     # Handle file upload
     if request.method == 'POST':
@@ -90,12 +90,12 @@ def event_detail(request, pk):
     model = Event
     event = get_object_or_404(Event, pk=pk)
     user_id=event.user.id
-    document = Document.objects.filter( user_id=event.user.id)[:1]
+    document = Document.objects.filter( user_id=event.user.id).order_by('-docfile')[:1]
     return render(request,  'dashboard/eventdetail.html', {'event': event ,'document':document})
 
 @login_required
 def devent(request):
-    document = Document.objects.filter(user_id = request.user.id)[:1]
+    document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
     # Handle file upload
     if request.method == 'POST':
         form = EventForm(request.POST , request.FILES)
@@ -148,20 +148,20 @@ def profile_edit(request, pk):
 def devent_detail(request):
     model = Event,Document,User
     event = Event.objects.filter(user_id = request.user.id)
-    document = Document.objects.filter(user_id = request.user.id)
+    document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
     return render(request,  'dashboard/detail.html', {'event': event, 'document': document })
 
 @login_required
 def uevent_detail(request, pk):
     model = Event
     event = get_object_or_404(Event, pk=pk)
-    document = Document.objects.filter(user_id = request.user.id)
+    document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
     return render(request,  'dashboard/ueventdetail.html', {'event': event,'document': document })
 
 def devent_edit(request,pk):
     model = Event
     event = get_object_or_404(Event, pk=pk)
-    document = Document.objects.filter(user_id = request.user.id)[:1]
+    document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
     
     # Handle file upload
     if request.method == 'POST':

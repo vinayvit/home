@@ -3,7 +3,7 @@
 {% load staticfiles %}  
 
 
-<img src='{% static "img/snap/00term.jpg" %}'class="img-responsive"/>
+<img src='{% static "img/snap/00term.jpg" %}'class="vertical-center"/>
 </div>
   <div class="container-fluid" style="background-color: #81b1c9">  
     <section id="about-company" class="padding-top wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms">
@@ -109,11 +109,11 @@
                           
                             <div class="col-sm-12" style="font-family:oswald">
                                 <h3 class="top-zero">Who we are</h3>
-                                <p>1:  shall not be false, inaccurate or misleading OR shall not be fraudulent;<br>
-   2: shall not infringe any third party's copyright, patent, trademark, trade secret;<br>
-   3: shall not violate any law, statute, ordinance or regulation ;<br>
-   4: shall not be defamatory, unlawfully threatening or unlawfully harassing;<br>
-   5: shall not contain any viruses, Trojan horses, worms, time bombs or other computer programming routines for personal information;<br>
+                                <p>1:  Shall not be false, inaccurate or misleading or shall not be fraudulent;<br>
+   2: Shall not infringe any third party's copyright, patent, trademark, trade secret;<br>
+   3: Shall not violate any law, statute, ordinance or regulation ;<br>
+   4: Shall not be defamatory, unlawfully threatening or unlawfully harassing;<br>
+   5: Shall not contain any viruses, Trojan horses, worms, time bombs or other computer programming routines for personal information;<br>
    </p>
                             </div>
                         </div>

@@ -8,7 +8,7 @@
 <head>
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
 </head>
-<div class="container-fluid" style="height:100px; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br>
+<div class="container-fluid" style="height:100px; width: auto; color:grey; background-color: PaleTurquoise"><br>
 <h1 style="color:white"><center><b>{% trans "Service Details" %}<b><center></h1></div>
 <div class="container-fluid">
 
@@ -56,15 +56,15 @@
 {% endif%}
 
 <br>
-        <h3 style="color:grey;"><lable>Post On:{{ post.date_created }}</lable></h3>
+        <h3 style="color:grey;"><lable>Post On:{{ post.date_created|date:"d M Y" }}</lable></h3>
        <br>
-        <h3 style="color:grey;"><lable>Expire On:{{post.expire_date}}</lable></h3>
+        <h3 style="color:grey;"><lable>Expire On:{{post.expire_date|date:"d M Y"}}</lable></h3>
        <br>
        <br>
 
 
 
-<a href="/products/enquiry/{{ post.user}}/"><input type="submit" class="btn btn-info btn-lg"  value="{% trans "Excahnge/Donate" %}&raquo;"/></a>
+<a href="/products/enquiry/{{ post.user}}/" style="color:#428BCA"><input type="submit" class="btn btn-info btn-lg"  value="{% trans "Excahnge/Donate" %}&raquo;"/></a>
    
  </div>
 </div>
@@ -74,7 +74,7 @@
 <center><a href="{% url 'servicelist' %}">
                     <i class="fa fa-external-link">
   <b><h4>BACK TO SERVICE LIST</h4><b></i></a></center>
-<div class="container-fluid" style="height:100px; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br> 
+<div class="container-fluid" style="height:100px; width: auto; color:grey; background-color: PaleTurquoise"><br> 
 <h4>Related Project.......</h4><center></center>
         
     </div>

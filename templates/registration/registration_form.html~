@@ -4,50 +4,52 @@
 {% block content %}
 {% load static %}
 {% if request.user.is_authenticated %}
-<div class="container-fluid">
-<div class="jumbotron"><img src='{% static "img/snap/1log.png" %}'
-	</div></div>
+<img src='{% static "img/snap/1log.png" %}'
+	
 		
 <p>YOUR ARE ALREADY LOGIN<P>
 <p> FOR FRESHES REGISTRTION LOGOUT FIRST<p><a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button>
-</div></div>
+</div>
 {% else %}
-<div class="container-fluid">
-<div class="jumbotron"><img src='{% static "img/snap/1ragi.jpg" %}'
-	</div>
-		</div>
-<div class="container-fluid">
-<div class='row'>
-<div class="col-md-1"></div>
+<div class="container-fluid" style="width: auto;  color:GhostWhite; background :url({% static "img/intro-bg.jpg" %}) no-repeat center top"> 
+<br><br><br><br><br><br>
+	<div class="row">
 <div class="col-md-4">
-<h1>Social App! login</h1>
-  <form><br><br>
+  </div>
+<div class="col-md-5" style="padding:1px;border:1px groove LightSteelBlue; background-color:#A4A4A4">
+<center><b><h1>Login</h1><b></center>
+<div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-9">
 
-<div>
-  <a href="#"><img src='{% static "img/fb.png" %}' id="loginBtn" onclick="logIn();" value="Login" /></a></div><br><br>
-<div>
-  <a href="http://www.twitter.com"><img src='{% static "img/tw.png" %}'/></a></div><br><br>
-<div>
-  <a href="http://www.gmail.com"><img src='{% static "img/gplus.png" %}' /></a></div><br><br>
-  </form>
-<div><a href="{% url 'auth_login' %}" class="btn btn-info btn-l square-btn-adjust">ALREADY REGISTER PLEASE SING-IN </a></div>        
- </div>
-<div class="col-md-7">
-<h1>Register for free!</h1>
 <form method="post" action=".">
+
   {% csrf_token %}
   {{ form|crispy }}
 
-  <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Join' %}" />
-</form>
-</div>
-</div>
+ <center>   <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Join' %}" /></center>
+  <input type="hidden" name="next" value="{{ next }}" />
 
+</form></div></div>
+<center><h4><b>Already Member ?<a href="{% url 'auth_login' %}" style="color:#428BCA"> Login here!</a></b></h4></center>
 <hr/>
-<div class='row'>
-<div class='col-sm-6 col-sm-offset-3 text-align-center'>
+ <form>
+<div>
+<center>Or Social Registration With Us.</center>
+<div class="col-sm-2"></div>
+<div class="col-sm-3">
+ <a href="http://www.twitter.com"><img src='{% static "img/t.png" %}'/></a></div>
+<div class="col-sm-3">
+ <a href="#"><img src='{% static "img/f.png" %}' id="loginBtn" onclick="logIn();" value="Login" /></a></div>
+<div class="col-sm-3">
+ <a href="http://www.gmail.com"><img src='{% static "img/g.png" %}' /></a></div>
+  </form></div> <br><br><br> <br> 
+</div>
+</div>
+<br><br><br><br><br><br>
+</div>
 
 </div>
-</div></div></div>
+
  {% endif %}
 {% endblock %}

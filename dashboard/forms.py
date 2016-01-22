@@ -5,16 +5,16 @@ from datetimewidget.widgets import DateTimeWidget, DateWidget, TimeWidget
 
 class DocumentForm(forms.Form):
     docfile = forms.FileField(
-        label='Select a file',
+        label='Upload Your Profile Image',
     )
     firstname = forms.CharField(
-        label='Enter your first name',
+        label='Enter Your First Name',
     )
     lastname = forms.CharField(
-        label='Enter your last name',
+        label='Enter Your Last Name',
     )
     address = forms.CharField(
-        label='Enter your address',
+        label='Enter Your Address',
     )
 
 class EventForm(forms.Form):
@@ -27,7 +27,7 @@ class EventForm(forms.Form):
         label='Enter Event Place',
     )
     dresscode = forms.BooleanField(
-        label='Enter your Event Dress',
+        label='Event Dress Code Allow',
     )
     duration = forms.TimeField(widget=TimeWidget(usel10n=True, bootstrap_version=3))  
 

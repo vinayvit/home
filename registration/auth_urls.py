@@ -26,13 +26,13 @@ consult a specific backend's documentation for details.
 from django.conf.urls import include
 from django.conf.urls import url
 from django.core.urlresolvers import reverse_lazy
-
+from products.views import *
 from django.contrib.auth import views as auth_views
 
 
-urlpatterns = [
+urlpatterns = [        #url(r'^enquiry/$', 'django_messages.views.enquiry', name='enquiry'),
                        url(r'^login/$',
-                           auth_views.login,
+                           'products.views.login',
                            {'template_name': 'registration/login.html'},
                            name='auth_login'),
                        url(r'^logout/$',

@@ -1,12 +1,12 @@
-{% extends "dashboard.html" %}        
+{% extends "dash.html" %}        
 {% load i18n %} 
 {% load url from future %}
 
 {% block content %}
 <body> 
-<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
 <h1 style="color:white"><center><b>{% trans "Sent Message" %}<b><center></h1><br>
-<div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: white">
+<div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: white">
 {% if message_list %} 
 
 <div class="row">
@@ -31,13 +31,13 @@
             {% if message.new %}{% endif %}
 <div class="col-md-2">{{ message.sent_at|date:"d M Y" }}</div></a>
 <div class="col-md-2"><a href="{% url 'messages_delete' message.id %}?next={% url 'messages_outbox' %}">{% trans "delete" %}</a></div>
-  <hr>  </div>
+  <hr>  </div><br><br><br> <br><br><br> <br><br><br> 
 {% endfor %}
     
 {% else %}
-<p><h1>{% trans "There is no messages in Your SentBox.."  %}</h1></p>
-{% endif %} 
-</div> </div>
+<p><h1>{% trans "There is no messages in your box.."  %}</h1></p>
+{% endif %} <br><br><br> <br><br><br> <br><br><br> <br><br><br> 
+</div><br><br> </div>
 </body>  
 
 {% endblock %}

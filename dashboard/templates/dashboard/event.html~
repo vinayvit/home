@@ -48,7 +48,7 @@ function resumeDiv() {
 </head>
    <body>     
                 <!-- List of uploaded documents -->
-                  <div class="container-fluid" style="width: auto; color:DarkCyan; background-color: ghostwhite"> 
+                  <div class="container-fluid" style="width: auto; color:#58FA58; background-color: ghostwhite"> 
          
          <br> <div class="container-fluid" >
 
@@ -108,7 +108,7 @@ function resumeDiv() {
                        <img id="blah" src="{% static 'assets/img/find_user.png' %}"  alt="your selected item" style="width:100%; height:100px;"/>
 								
                 {% endif %}	
-			<h4><span class="glyphicon glyphicon-calendar"><a href='{{ product.get_absolute_url }}'> {{  event.date_event|date:"d M Y" }}</a></span></h4>
+			<h4><span class="glyphicon glyphicon-calendar"><a href='{{ product.get_absolute_url }}'style="color:#428BCA"> {{  event.date_event|date:"d M Y" }}</a></span></h4>
 <h4><i class="fa fa-home">
 {{  event.place }}</i></a> </h4>
 {% if event.docfile %}
@@ -119,7 +119,7 @@ function resumeDiv() {
 {% endfor %}
 </div><br>
  </div>
-    <div class="row" style="width: auto; color:DarkCyan; background-color: Lavender"> 
+    <div class="row" style="width: auto; color:#58FA58; background-color: Lavender"> 
     <div class="container-fluid"> 
 
 <div class="col-md-6">
@@ -141,7 +141,7 @@ function resumeDiv() {
 <body class='container-fluid'   onLoad="scrollDiv_init()">
 <div id="MyDivName" style="overflow:auto;width:350px;height:350px;float:right;" onMouseOver="pauseDiv()" onMouseOut="resumeDiv()" >
 {% for event in event %}
-<a href='/dashboard/event/{{ event.pk }}/'> <h3>
+<a href='/dashboard/event/{{ event.pk }}/'style="color:#428BCA"> <h3>
 {% if event.snap %}
 
 		   	 <img class="img-circle" src="{{ event.snap.url }}" class="img-responsive"    alt="image not found" style="width:30%; height:80px;"></img>

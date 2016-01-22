@@ -2,23 +2,27 @@
 {% load crispy_forms_tags %}        
 {% load i18n %} 
 {% block content %} 
-<body>
-<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h1 style="color:white"><center><b>{% trans "Enquiry Message" %}<b></center></h1><br><hr/>
-<div class="container-fluid" style="height:auto; width: auto; color:DarkCyan; background-color: PaleTurquoise"><br><br><br>
-<h2>SEND MESSAGE FOR REQUEST..</h2><br>
+<body><br>
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
+<h1 style="color:white"><center><b>{% trans "Enquiry Message" %}<b></center></h1><br>
+<div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: ghostwhite"><br><br>
+<br>
+<div class="row">
+<div class="col-md-2">
+  </div>
+<div class="col-md-8" style="padding:1px;border:1px groove SteelBlue; background-color:white">
+<center><b><h1>Instant Message</h1><b></center><hr>
+
 <form action="" method="post">
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
 {% csrf_token %} 
 <table>
 {{ form|crispy }}
-</table>{{document.id}}
-<input type="submit" class="btn btn-info btn-lg" value="{% trans "Send Message" %} &raquo;"/>
-</form><br>
-</div>
-<br>
-</div>
-
-</body>
+</table></div></div>
+<center><input type="submit" class="btn btn-info btn-lg" value="{% trans "Send Message" %} &raquo;"/></center>
+</form><br><br></div>
+</div><br> </div><br></div>
 
 {% endblock %}
-

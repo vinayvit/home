@@ -5,7 +5,7 @@
 
   body {
     background: #fff;
-    font-family: Oswald;
+    font-famil: arctik;
     font-weight: 300;
     font-size: 14px;
     line-height: 22px;
@@ -29,20 +29,13 @@
     outline-offset: 0;
   }
 
-  a {
-    -webkit-transition: 300ms;
-    -moz-transition: 300ms;
-    -o-transition: 300ms;
-    transition: 300ms;
-  }
-
-
+ 
   ul {
     list-style: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: Oswald;
+    font-famil: arctik;
     font-weight: 300;
   }
 
@@ -71,7 +64,7 @@
     font-size: 14px;
     color: #0099ae;
     border: 1px solid #0099ae;
-    font-family: 'Open Sans', sans-serif;
+    font-famil: 'Open Sans', sans-serif;
     font-weight: 300;
     padding: 10px 25px;
   }
@@ -438,7 +431,7 @@ ul.sub-menu {
   content: '"';
   font-size: 40px;
   color: #ea2c00;
-  font-family: 'Noto Sans', sans-serif;
+  font-famil: 'Noto Sans', sans-serif;
   transform:rotate(180deg);
   -ms-transform:rotate(180deg); /* IE 9 */
   -webkit-transform: rotate(180deg); /* Opera, Chrome, and Safari */
@@ -452,7 +445,7 @@ ul.sub-menu {
   content: '"';
   font-size: 40px;
   color: #ea2c00;
-  font-family: 'Noto Sans', sans-serif;
+  font-famil: 'Noto Sans', sans-serif;
   line-height: 0;
 }
 
@@ -2454,7 +2447,7 @@ span.stButton_gradient,
   margin-top: 50px;
   padding: 25px 53px;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+  font-famil: 'Open Sans', sans-serif;
 }
 
 .btn-error:hover, .btn-error:focus  {

@@ -1,17 +1,22 @@
 {% load staticfiles %}
-
+<style>
+a {
+  color: #eaeef2;
+  text-decoration: none;
+}
+</style>
     <link href="{% static 'fotter/css/font-awesome.min.css' %}" rel="stylesheet">
      
     <link href="{% static 'fotter/css/animate.min.css' %}" rel="stylesheet"> 
 
 
 <div class="navbar-default navbar-bottom" role="navigation" style="background-color: #383838">
-<div class="container-fluid" style="height:255px">
-<div class="navbar-footer">
+<div class="container-fluid" style="height:255px;color: White">
+<div class="navbar-footer" style="color: White">
 <ul class="nav navbar-nav navbar-center">
 <div class="tabbable" style="padding-top: 40px"> <!-- Only required for left/right tabs -->
 <ul class="nav nav-tabs">
- <li role="presentation" ><a href="{% url 'about' %}"><b>ABOUT US</b></a></li>
+ <li role="presentation" ><a href="{% url 'about' %}" style="color: White"><b>ABOUT US</b></a></li>
  <li role="presentation"><a href="{% url 'gallery' %}"><b>GALLERY</b></a></li>
   <li role="presentation"><a href="{% url 'faq' %}"><b>FAQ</b></a></li>
  <li role="presentation"><a href="{% url 'service' %}"><b>OUR SERVICES</b></a></li>

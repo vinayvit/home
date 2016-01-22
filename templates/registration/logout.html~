@@ -6,11 +6,10 @@
 <body>
 <br>
 <div class="container-fluid">
-<div class="jumbotron"><img src='{% static "img/snap/1bac.jpeg" %}'  class='img-responisive'/>
-	</div>
+<img src='{% static "img/snap/1bac.jpeg" %}'  class='vertical-center'/>
 		
 <p class='text-align-center lead'>You have successfully logged out.</p>
-<p class='text-align-center lead'><a href="{% url 'auth_login' %}">Login</a></p>
+<p class='text-align-center lead'><a href="{% url 'auth_login' %}" style="color:#428BCA">Login</a></p>
 </div>
 </body>
 {% endblock %}

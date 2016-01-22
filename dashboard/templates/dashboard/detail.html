@@ -1,48 +1,144 @@
-{% extends "dashboard.html"%}
+
+
+{% extends "dashboard.html" %}
+
 {% block content %}
 {% load staticfiles %}
-<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h2 style="color:white"><center><b>"PAST DETAILS OF YOUR EVENT'S<br><br><hr/>
-<div class="container-fluid" style="height:130%; width: auto; color:skyblue; background-color: ghostwhite">
-    <h3 style="color:SteelBlue">Explore Your Past Action with US.</h3><br>
-	    <div class="row">
-        
-		{% if event %}
-<div class='row'>
-                      
-{% for event in event %}
-		<div class='col-sm-2'>
-
-
-
-			<div class="thumbnail" style="width:100%; height:250px;">
-<a href="/dashboard/detail/{{ event.pk }}/" class='btn btn-info btn-block' role="button"><b>{{  event.eventtype|upper|truncatewords:10 }}</b></a>
+<head>
 	
-{% if event.snap %}
+	  <style>
+		#hover:hover
+		{
+    background-color: white;
+    
+} 
 
-		   	 <img src="{{ event.snap.url }}" class="img-responsive"   alt="image not found" style="width:100%; height:100px;"></img>
-           {% else %}
-                       <img id="blah" src="{% static 'assets/img/find_user.png' %}"  alt="your selected item" style="width:100%; height:100px;"/>
-								
-                {% endif %}	
-			<h3><a href='{{ product.get_absolute_url }}'> {{  event.date_event|date:"d M Y" }}</a>
-{{  event.place }}</a>
-<a href="/products/enquiry/{{ event.user}}/"  class='btn btn-warning btn-block' role="button">{{  event.user }}</a> </h3>
-						
-           </div>
- </div>
- 
-	{% endfor %}				</div>
-		   
+.text
+{
+	border: 1px solid #eeeeee;
+	background-color: #eeeed1;
+}
 
-		</div></div>
- </div>
+</style>
+	
+    <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
+</head>
+   <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
+<h3 style="color:#797980"><center><b>PAST DETAILS OF YOUR EVENT<b></center></h3>
+<div class="container-fluid" style="height:auto; width: auto; color:#797980;  background-color: white">
+{% if event %}
+    <div class="row">
+        <div class="col-md-3">
+		<h4><label> EventImage</label></h4>	
+		</div>
+		<div class="col-md-3">
+			<h4><label> Title </label></h4>
+		</div>
+		
+		<div class="col-md-4">
+			<h4><label> OfferOn </label></h4>
+		</div>
+		
+		<div class="col-md-2">
+			<h4><label> Edit </label></h4>
+		</div>
+		
+		</div>	
+    
+{% for event in event %}
+     <div id="hover" class="text">
+       <br> 
+	    <div class="row">
+        <div class="post">
+		{% if event %}
+           <div class="col-md-3" >
+                        <ul>                               
+                         <a href="/dashboard/detail/{{ event.pk }}/"> <img src="{{ event.snap.url }}" class="img-responsive"  width="60px" height=60px" alt="image "></a>
+                               </li>
+                        
+                        </ul>
+               
+                
+			</div>
+            
+			<div class="col-md-3">
+	
+			
+			
+                              <br><br><br><br>
+			
+			<h5 style="margin-top:-70px"><a href="/dashboard/detail/{{ event.pk }}/" style="text-decoration:none;color:#428BCA">{{  event.eventtype|upper|truncatewords:10 }}</a></h5>
+			
+                              
+			</div>
+			<div class="col-md-4">
+		
+			
+                              <br><br><br><br>
+            <h5 style="margin-top:-70px"><a href="/dashboard/detail/{{ event.pk }}/" style="text-decoration:none;color:#428BCA"> {{  event.date_event|date:"d M Y" }}</a> </h5>
+			
 
- {% else %}
-                        <h4 style="color:DarkCyan">STILL YOU HAVE NOT BEGIN CHARITY.</h4>
+                              </div>
+ <div class="col-md-2">
+
+			
+                              <br><br><br><br>
+           
+			
+                 
+  <h5 style="color:black; margin-top:-70px"><a class="btn btn-default" href="/dashboard/detail/{{ event.pk }}/" style="color:#428BCA"> <i class="fa fa-pencil-square-o"></i>
+</a>  </h5>  
+ {% endif %}
+            </div>
+			</div>
+			
+		            </div>
+{% endfor %}
+			
+			{% else %}
+                        
+<h4  style="color:#170f3d;">STILL YOU HAVE NOT BEGIN CHARITY.</h4>
 <p>*There is no any past history of your Donation.</p>
-                {% endif %}
-</div>
-{% endblock %}
+{% endif %}
+</div><br><br><br></div>
+	<script>	
+     $("#img88").elevateZoom({scrollZoom : true});
+    </script>
+{% endblock content %}
 
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

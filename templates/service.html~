@@ -4,7 +4,7 @@
 <br>
 
 
-<img src='{% static "img/snap/00ser.jpg" %}' class="img-responsive inline"'
+<img src='{% static "img/snap/00ser.jpg" %}' class="vertical-center"/>
 
     <section id="company-information" class="choose">
         <div class="container-fluid">

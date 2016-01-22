@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^about/$', 'ecommerce2.views.about', name='about'),
     url(r'^blank/$', 'ecommerce2.views.blank', name='blank'),  
     url(r'^faq/$', 'ecommerce2.views.faq', name='faq'),
-    url(r'^service/$', 'ecommerce2.views.service', name='service'),
+    url(r'^services/$', 'ecommerce2.views.services', name='services'),
     url(r'^term/$', 'ecommerce2.views.term', name='term'),
     url(r'^gallery/$', 'ecommerce2.views.gallery', name='gallery'),
  # Dashboard:

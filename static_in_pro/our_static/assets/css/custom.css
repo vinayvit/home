@@ -18,7 +18,8 @@ body {
 
  #wrapper {
     width: 100%;
-    background:blue;
+
+    background:white;
 }
 
 #page-wrapper {
@@ -30,9 +31,9 @@ body {
 #page-inner {
     width:100%;
     margin:10px 20px 10px 0px;
-    background-color:#fff!important;
+
     padding:10px;
-    min-height:1200px;
+    min-height: 765px;
 }
 
 .text-center {
@@ -342,7 +343,7 @@ line-height: 1.428571429;
      #page-wrapper{
                margin: 0 0 0 260px;
         padding: 15px 30px;
-        min-height: 1200px;
+        min-height: auto;
 		
     }
 	

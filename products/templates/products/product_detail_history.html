@@ -1,36 +1,35 @@
 {% extends "dashboard.html"%}
 
 {% block content %}
-<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h2 style="color:white"><center><b>"YOUR PAST PRODUCT DETAIL. "<b></center></h2><br><br>
-<div class="container-fluid" style="height:130%; width: auto; color:DarkCyan; background-color: ghostwhite">
-    <h3 style="color:DarkCyan">Edit Action can perform here.</h3><br>
+<div class="container-fluid" class="responsive" style="height: auto; width: 100%; background-color: white">
+<h3 style="color:#797980"><center><b>YOUR PAST PRODUCT DETAIL<b></center></h3>
+<div class="container-fluid" style="height:auto; width: 100%; background-color:  white">
+    
 
-       
-    <div class='col-sm-4'>
+    <h3 style="color:#3b5998;  margin-left:50px">{{post.title}}</h3>
+        
 
+    <div class='col-sm-5'>
          
-        <div><br>
-			<h3 style="color:brown;"><lable>Donated Item:</lable></h3><br>
-			{% if post %}<br>
+        <div>
+			{% if post %}
                         <ul>
-                        
-                                
-                                <img src="{{ post.docfile.url }}" style="width:350px; height:190px; border:1px solid brown; class="img-circle" alt="{{ post.docfile.name }}">
+                                <img src="{{ post.docfile.url }}" style="height:40%; width:500%;"  class="img-responsive" alt="{{ post.docfile.name }}">
                                 </a></li>
                         
                         </ul>
                 {% else %}
-                        <p>No documents.</p>
+                        
                 {% endif %}
-			<br>
+			
              
         </div> 
         
     </div>
-
+    <div class='col-sm-1'>
+	</div>
     <!-- Product Sidebar --> 
-    <div class='col-sm-6'style="padding-left:200px">
+    <div class='col-sm-6'>
         
         {% if object.variation_set.count > 1 %}
             <select class="form-control">
@@ -39,27 +38,48 @@
                 {% endfor %}
             </select>
         {% endif %}
-        <br/>
-		 <h3 style="color:brown;"><lable>Title:</lable></h3>
-       {{post.title}}<br>
-        <h3 style="color:brown;"><lable>Add On:</lable></h3>
-       {{ post.date_created }}<br>
-        <h3 style="color:brown;"><lable>Expire On:</lable></h3>
-       {{post.expire_date}}<br> 
-        <h3 style="color:brown;"><lable>Last Update:</lable></h3>
-       {{post.date_Update}}
-<br><br><br>
  
-      Edit: <a class="btn btn-default" href="{% url 'post_edit_list' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> 
+       
+  
+        <h4 style="color:#434343;"><lable><i class="fa fa-calendar"> AddOn:</lable></h4></i>
+      <h4 style="color:#3b5998"> {{ post.date_created|date:"d M Y" }}</h4>
+      
+      
+         <h4 style="color:#434343;"><lable><i class="fa fa-calendar"> Expire On:</lable></h4></i>
+      <h4 style="color:#3b5998"> {{post.expire_date|date:"d M Y"}}</h4>
+      
+      	
+        <h4 style="color:#434343;"><lable><i class="fa fa-home">Address:</lable></h4></i>
+       
+   <h4 style="color:#3b5998;">    {{post.address}}</h4>
+ 
+     <h4 style="color:#434343;">  Product:<a class="btn btn-default" href="{% url 'post_edit_list' pk=post.pk %}" style="color:#428BCA"> <i class="fa fa-pencil-square-o"></i>
+</a>  </h4>  
     </div>
 	<div class="row">
-	<div class="col-sm-9">
-	<h3 style="color:brown; padding-top:20px"><lable>Description:</lable></h3>     
-          <p><h4>{{ post.description }}</h4></p>
+	<div class="col-sm-10">
+	  
+          <h4 style="color:#3b5998;  margin-left:50px">{{ post.description }}</h4>
 		</div>
-      </div> 
+      </div>  
     </div>
- 
-</div>
 </div>
 {% endblock %}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+

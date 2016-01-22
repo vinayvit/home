@@ -52,7 +52,7 @@ class ServiceForm(forms.Form):
         label='Active',
     )
     duraction = forms.CharField(
-        label='duraction',
+        label='Duraction',
     )
     zip_Code = forms.CharField(
         label='Zip_Code',
@@ -63,10 +63,8 @@ class ServiceForm(forms.Form):
     address = forms.CharField(
         label='Address',
     )
-    expire_date = forms.DateTimeField(
-        label='Expire Date',
-    )
-    
+    expire_date = forms.DateTimeField(widget=DateTimeWidget(usel10n=True, bootstrap_version=3))
+   
 
 class Service1Form(forms.ModelForm):
 

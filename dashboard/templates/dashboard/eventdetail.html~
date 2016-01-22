@@ -9,7 +9,7 @@
 
         <body>
                 <!-- List of uploaded documents -->
-                  <div class="container-fluid" style="width: auto; height:1050px; color:DarkCyan; background :url({% static "img/map-image.png" %}) no-repeat center top"> 
+                  <div class="container-fluid" style="width: auto; height:1050px; color:grey; background :url({% static "img/map-image.png" %}) no-repeat center top"> 
          
          <div class="container-fluid">
 
@@ -34,10 +34,10 @@
        <div class="img" style="height: 400px; width:110%">
 
                        <img id="img1" src="{% static 'assets/img/find_user.png' %}" class="img-inline-responsive" width="110%" height="400px" alt="your selected item"/>
-		
+
   </div>
 </div>
-						
+
                 {% endif %}
 
   </div>
@@ -46,7 +46,7 @@
 <div class='row'>
        
                   
-		<div class='col-sm-5'></div><div class='col-sm-6'>
+<div class='col-sm-5'></div><div class='col-sm-6'>
 
 <h1>{{  event.eventtype }} </h1><br></div>
 <div class='col-sm-2'></div>
@@ -57,15 +57,14 @@
                       {% endfor %}
           
                         {% else %}
-                      <h4> <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle" id="circle"   alt="your selected item"/></img>UNKNOWN</h4>							
-                {% endif %} 
-<a href='{{ product.get_absolute_url }}'><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.place }}</span></h3></a> 
+                      <h4> <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle" id="circle"   alt="your selected item"/></img>UNKNOWN</h4>                {% endif %} 
+<a href='{{ product.get_absolute_url }}' style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.place }}</span></h3></a> 
 <br>       
-		
-<a href='{{ product.get_absolute_url }}'><h3><i class="fa fa-calendar"></i> <span class="network-name">Dresscode: {{  event.dresscode }}</span></h3></a> 
+
+<a href='{{ product.get_absolute_url }}' style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">Dresscode: {{  event.dresscode }}</span></h3></a> 
 </div>
                 <div class='col-sm-3'>
-			 {% if event.snap %}
+{% if event.snap %}
  <img id="img1"src="{{ event.snap.url }}"  class="img-inline-responsive" width="60%" height="200px" alt="your selected item"/>
      
 
@@ -73,26 +72,27 @@
  {% else %}
 
                        <img id="img1" src="{% static 'assets/img/find_user.png' %}" class="img-inline-responsive" width="60%" height="200px" alt="your selected item"/>
-					
+
                 {% endif %}
 
 
 
  
 </div>
-	 <div class='col-sm-3'>
-	<a href='{{ product.get_absolute_url }}'><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.date_event }} 	</span></h3></a> 
-<br>           		
-<a href='{{ product.get_absolute_url }}'><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.duration }}	</span></h3></a> 
-           				<br> 
-					<a href="/products/enquiry/{{ event.user}}/" ><h3 class='btn btn-default btn-block'><i class="fa fa-calendar"></i> <span class="network-name">{{  event.user }}</span></h3></a> 
+ <div class='col-sm-3'>
+<a href='{{ product.get_absolute_url }}'style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.date_event }} </span></h3></a> 
+<br>           
+<a href='{{ product.get_absolute_url }}'style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.duration }}
+</span></h3></a> 
+           <br> 
+<a href="/products/enquiry/{{ event.user}}/" ><h3 class='btn btn-default btn-block'><i class="fa fa-calendar"></i> <span class="network-name">{{  event.user }}</span></h3></a> 
 
                      
-		</div>
+</div>
 
 
 </div><br><br><div class='col-sm-2'></div>
- 					<p>{{ event.description|truncatewords:15}}</p> 
+ <p>{{ event.description|truncatewords:15}}</p> 
 
 
   </div>
