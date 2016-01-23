@@ -3,7 +3,7 @@
 {% block content %}
 {% load staticfiles %}
 <head>
-    <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
+
     <style>
 		#hover:hover
 		{
@@ -20,7 +20,7 @@
 </style>
 </head>
    <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
-<h3 style="color: #797980"><center><b>PAST DETAILS OF YOUR PRODUCT<b></center></h3>
+<h3 style="color: #797980"><center><b>ITEM HISTORY<b></center></h3>
 <div class="container-fluid" style="height:auto; width: auto; color:#797980;  background-color: white">
  
 {% if posts %}
@@ -93,8 +93,8 @@
             </div>
 			</div>
 			
-		            </div><br><br><br>
-			<br>{% endfor %} 
+		            </div>{% endfor %} <br><br><br>
+			<br>
 			
 			
 			{% else %}

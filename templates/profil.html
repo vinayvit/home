@@ -4,7 +4,7 @@
 <div class="container-fluid" class="responsive" style="background-color: grey">
 
   <div class="grid_12">
-  <h1 style="color:white"><center><b> Your Profile<b><center></h1>
+  <h1 style="color:white"><center><b> YOUR PROFILE<b><center></h1>
 
       	</div>
 	
@@ -12,34 +12,35 @@
  
 <div class="container-fluid" style="height: 590px; width: auto; color:grey; background-color: ghostwhite"><br>
 <br><br><br>
-  <div class="row"><div class="col-md-2"></div>{% if document %}
+  <div class="row"><div class="col-md-3"></div>{% if document %}
 {% for document in document %}
-  <div class="col-md-4">
+
+  <div class="col-md-3">
 <label style="color: MidnightBlue" class="responsive" >Your First Name:</label></div>
-    <div class="col-md-7" name="lastname"  style="width:300px; height:30px; background-color:white">{{  document.firstname }}</div></div><br>
-<div class="row"><div class="col-md-2"></div>
-<div class="col-md-4">
+    <div class="col-md-5" name="lastname"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{  document.firstname }}</div></div><br>
+<div class="row"><div class="col-md-3"></div>
+<div class="col-md-3">
  <label style="color: MidnightBlue">Your Last Name:</label></div>
-    <div class="col-md-8" name="lastname"  style="width:300px; height:30px; background-color:white">{{ document.lastname}}</div></div><br>
-<div class="row"><div class="col-md-2"></div>
-<div class="col-md-4">
+    <div class="col-md-8" name="lastname"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{ document.lastname}}</div></div><br>
+<div class="row"><div class="col-md-3"></div>
+<div class="col-md-3">
  <label style="color: MidnightBlue">Address:</label></div>
-    <div class="col-md-8" name="lastname"  style="width:300px; height:30px; background-color:white">{{ document.address}}</div></div><br>
-<div class="row"><div class="col-md-2"></div> {% endfor %}
+    <div class="col-md-8" name="lastname"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{ document.address}}</div></div><br>
+<div class="row"><div class="col-md-3"></div> {% endfor %}
 {% else %}
 <a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>EDIT PROFILE</a>
                 {% endif %}      
-<div class="col-md-4">
+<div class="col-md-3">
  <label style="color: MidnightBlue">Your Email:</label></div>
-    <div class="col-md-8" name="mail"  style="width:300px; height:30px; background-color:white">{{ request.user.email}}</div></div><br>
-<div class="row"><div class="col-md-2"></div>
-<div class="col-md-4">
+    <div class="col-md-8" name="mail"  style="width:300px; height:30px;padding-top:5px;padding-top:5px; background-color:white">{{ request.user.email}}</div></div><br>
+<div class="row"><div class="col-md-3"></div>
+<div class="col-md-3">
   <label style="color: MidnightBlue">Last login:</label></div>
-    <div class="col-md-8" name="login"  style="width:300px; height:30px; background-color:white">{{ request.user.last_login}}</div></div> <br>
-<div class="row"><div class="col-md-2"></div>
-<div class="col-md-4">
+    <div class="col-md-8" name="login"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{ request.user.last_login}}</div></div> <br>
+<div class="row"><div class="col-md-3"></div>
+<div class="col-md-3">
  <label style="color: MidnightBlue">A/C Activation Date:</label></div>
-    <div class="col-md-8" name="account_no"  style="width:300px; height:30px; background-color:white">{{ request.user.date_joined}}</div> 
+    <div class="col-md-8" name="account_no"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{ request.user.date_joined}}</div> 
  </div></div>
 <br>	
 </div>

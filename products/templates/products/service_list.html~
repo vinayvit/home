@@ -3,7 +3,7 @@
 {% block content %}
 {% load staticfiles %}
 <head>
-	
+<script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
 	  <style>
 		#hover:hover
 		{
@@ -22,7 +22,7 @@
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
 </head>
    <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
-<h3 style="color:#797980"><center><b>PAST DETAILS OF YOUR SERVICE<b></center></h3>
+<h3 style="color:#797980"><center><b>SERVICE HISTORY<b></center></h3>
 <div class="container-fluid" style="height:auto; width: auto; color:#797980;  background-color: white">
 {% if posts %}
     <div class="row">
@@ -85,64 +85,25 @@
 			
                  
   <h5 style="color:black; margin-top:-70px"><a class="btn btn-default"href="{% url 'post_edit_service' pk=Product.pk %}" style="color:#428BCA"> <i class="fa fa-pencil-square-o"></i>
-</a>  </h5>  
+</a>  </h5>   </div>
  {% endif %}
-            </div>
+          </div>  
 			</div>
 			
 		            </div>
-{% endfor %}
+{% endfor %} <br><br><br><br>
 			
 			{% else %}
                         
 <h3  style="color:#170f3d;">There is no any past Service history ..................</h3><br><br><br><br><br><br><br><br><br><br>
 			{% endif %}
 			
-			
-			
-			
-			
-			
-			
-			</div><br><br><br></div>
+		
+			</div></div>
 	<script>	
      $("#img88").elevateZoom({scrollZoom : true});
     </script>
 {% endblock content %}
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
     

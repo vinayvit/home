@@ -4,14 +4,14 @@
 {% block content %} 
 <body>
 <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
-<h1 style="color:white"><center><b>{% trans "Compose Message" %}<b></center></h1><br>
+<h1 style="color:white"><center><b>{% trans "COMPOSE MESSAGE" %}<b></center></h1><br>
 <div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: ghostwhite"><br><br>
 <br>
 <div class="row">
 <div class="col-md-2">
   </div>
 <div class="col-md-8" style="padding:1px;border:1px groove SteelBlue; background-color:white">
-<center><b><h1>Instant Message</h1><b></center><hr>
+<center><b><h1>INSTANT MESSAGE</h1><b></center><hr>
 <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-9">

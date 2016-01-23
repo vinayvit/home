@@ -1,0 +1,174 @@
+{% load staticfiles %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>E-CHARITY</title>
+		<meta name="description" content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
+		<meta name="keywords" content="sidebar, off-canvas, menu, navigation, effect, inspiration, css transition, SVG, morphing, animation" />
+		<meta name="author" content="Codrops" />
+
+    <link href="{% static 'fotter/css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'fotter/css/main.css' %}" rel="stylesheet">
+
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/search.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/bootstrap.min.css'  %}" type="text/css" />
+<link href="{% static 'css/bootstrap-theme.css' %}" type="text/css" />
+<link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" />
+<!----------------ONLINE------->
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" />
+
+<style>
+.navbar-default{
+background:white;
+}
+.modal-footer{
+background:LightSteelBlue;
+}
+
+#myBODY {
+   background :url({% static "img/slider-intro-imageh2.jpg" %}) no-repeat center top;
+   background-repeat: no-repeat;}
+
+
+</style>
+</head>
+<body style="background: Lavender"  ">
+<div class="navbar-default navbar-fixed-top" role="navigation" style="background-color:White">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href=''> <img src='{% static "img/logo.png" %}'  class='img-inline-responsive'/></a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-right">
+<!-- Trigger the modal with a button -->
+ {% if request.user.is_authenticated %}
+<a href="{% url 'dashboard' %}"><img src="{% static 'img/hom.png' %}" class="img-circle" id="circle" alt="USER" style="width:50px; height:45px"/></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{% else %}
+<button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">LOGIN HERE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ {% endif %}
+</ul>
+</div>
+</div>
+    </div>
+
+ <div class="container-fluid">
+           
+<br><br><br><br><br><br>
+
+<div class="column large-10 large-centered text-center">
+            <p style="padding-top:7px">
+                <h1 id="text1" class="show-for-medium-up">E Community Giving</h1><br> <h3 id="text1"<br>Connect within the community, exchange goods and services, and donate to charities. All at the same place.</h3></p><br>
+<br>
+                <div id="myBODY">
+
+  <div class="mtb">
+               <div class="flexsearch">
+		<div class="flexsearch--wrapper">
+		<form class="flexsearch--form"  method="GET" role="search" action='{% url "products" %}'>
+		<div class="flexsearch--input-wrapper">
+			<input class="flexsearch--input" type="search" placeholder="Search your Item Here" name='q'>
+		</div>
+		<input class="flexsearch--submit" type="submit" value="&#10140;" onclick="myfunction()"/>
+		</form>
+		</div>
+</div>
+</div></div>
+</div>
+	</div><br>
+<br><br><center>
+<ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="#" class="btn btn-success btn-lg" data-toggle="modal" id='rim1' data-target="#cls"><i class="fa fa-laptop"></i> <span class="network-name">Classified</span></a>
+                            </li>
+                            <li>
+                                <a href="/servicelist/" class="btn btn-info btn-lg"><i class="fa fa-cog"></i> <span class="network-name">Services</span></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'event' %}" class="btn btn-warning btn-lg"><i class="fa fa-calendar"></i> <span class="network-name">Events</span></a>
+                            </li>
+ 			 <li>
+                                <a href="{% url 'products' %}" class="btn btn-danger btn-lg"><i class="fa fa-cart-plus"></i> <span class="network-name">Donate's Product</span></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'enquiry' %}" class="btn btn-primary btn-lg"><i class="fa fa-comments-o"></i> <span class="network-name">Connect</span></a>
+                            </li>
+                        </ul><center>
+</div>
+	</div>
+ <!----------------------------------------------------------IMG container-fluid from backend ------------------------------>
+
+{% load staticfiles %}
+{% block content %}
+
+
+  <div class="modal fade" id="login" role="dialog">
+<div class="modal-dialog modal-sm">
+      <div class="modal-content">
+         <div class="modal-footer">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><center>LOGIN HERE</center> </h4>
+        </div>
+        <div class="modal-body" style="background:Lavender">
+<center><b>Already Register Click Here <b></center>
+<a href="{% url 'auth_login' %}"> <img src='{% static "img/snap/button.png" %}' /> </a><hr/>
+ <center><b>First Time User Click Here <b></center>
+ <a dir="ltr" href="{% url 'registration_register' %}"> <img src='{% static "img/snap/buttonu1.png" %}' /></a>
+                </div>
+<div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+
+    </div></div>
+
+
+
+<!------------------------------------------------------>
+<div class="modal fade" id="cls" role="dialog">
+<div class="modal-dialog modal-sm">
+      <div class="modal-content">
+         <div class="modal-footer">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">CLASSFIED BY CATAGROIS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+        </div>
+        <div class="modal-body"><center>
+<a href="{% url 'list' %}" class="btn btn-primary btn-lg"><i class="fa fa-laptop"></i> <span class="network-name">PRODUCTS</span></a></center><hr>
+<center>
+<a href="/products/service/" class="btn btn-primary btn-lg"><i class="fa fa-laptop"></i> <span class="network-name">SERVICES</span></a></center><hr>
+<center>
+<a href="{% url 'event' %}" class="btn btn-primary btn-lg"><i class="fa fa-laptop"></i> <span class="network-name">EVENTS</span></a></center>
+                </div>
+<div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+</div>
+
+      </div>
+      </div> </div>
+<!------------------------------------------------------>
+<img src='{% static "img/donate item.png" %}' />
+<img src='{% static "img/events.png" %}' />
+<img src='{% static "img/services.png" %}' />
+</body>
+{% include "products/footer1.html" %}
+
+    </html>
+   {% endblock %}

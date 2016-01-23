@@ -1,17 +1,17 @@
-{% extends "dash.html" %}
+{% extends "dashboard.html" %}
 {% load crispy_forms_tags %}        
 {% load i18n %} 
 {% block content %} 
 <body>
 <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
-<h1 style="color:white"><center><b>{% trans "COMPOSE MESSAGE" %}<b></center></h1><br>
+<h1 style="color:white"><center><b>{% trans "Services Update " %}<b></center></h1><br>
 <div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: ghostwhite"><br><br>
 <br>
 <div class="row">
 <div class="col-md-2">
   </div>
 <div class="col-md-8" style="padding:1px;border:1px groove SteelBlue; background-color:white">
-<center><b><h1>INSTANT MESSAGE</h1><b></center><hr>
+<center><b><h1>Edit Service Details</h1><b></center><hr>
 <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-9">
@@ -21,7 +21,7 @@
 <table>
 {{ form|crispy }}
 </table>
-<center><input type="submit" class="btn btn-info btn-lg" value="{% trans "Send Message" %} &raquo;"/></center>
+<center><input type="submit" class="btn btn-info btn-lg" value="{% trans "Submit changes" %} &raquo;"/></center>
 </form></div></div></div></div><br><br>
 </div><br></div>
 

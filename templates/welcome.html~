@@ -18,7 +18,7 @@
    	<!-- BOOTSTRAP STYLES-->
 	<link href="{% static 'fotter/css/main.css' %}" rel="stylesheet">
      <!-- FONTAWESOME STYLES-->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=arctik" />
         <!-- CUSTOM STYLES-->
     <link href="{% static 'assets/css/custom.css' %}" rel="stylesheet" />   
 <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
@@ -81,7 +81,7 @@
                     </li>
 
  			<li>
-                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>OFFER EVNTS</a>
+                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>HOST EVNTS</a>
                     </li>
 			<li>
                         <a href="#"><i class="fa fa-sitemap fa-3x"></i> HISTORY<span class="fa arrow"></span></a>
@@ -90,7 +90,7 @@
                                 <a href="{% url 'post_history' %} "><i class="fa fa-laptop fa-3x"></i>Product History</a>
                             </li>
                             <li>
-                                <a href="{% url 'service_history' %}"><i class="fa fa-bolt fa-3x"></i>Service History</a>
+                                <a href="{% url 'service_history' %}"><i class="fa fa-archive" style="font-size:36px"></i>Service History</a>
                             </li>
                               <li>
                                  <a href="{% url 'devent_detail' %}"><i class="fa fa-bar-chart-o fa-3x"></i>Event History</a>
@@ -101,7 +101,7 @@
                         <a href="{% url 'profiles' %} "><i class="fa fa-table fa-3x"></i> PROFILE</a>
                     </li>	
                       <li>
-			<a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>CREATE PROFILE</a>
+			<a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>UPLOAD PROFILE</a>
                     </li>
                   
                 </ul>

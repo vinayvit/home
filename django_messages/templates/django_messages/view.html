@@ -5,7 +5,7 @@
 {% block content %}
 <body>
 <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
-<h1 style="color:white"><center><b>{% trans "View Message" %}<b><center></h1><br>
+<h1 style="color:white"><center><b>{% trans "VIEW MESSAGE" %}<b><center></h1><br>
 <div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: ghostwhite">
 <h2><strong>{{ message.subject }}</strong></h2>    <div class="col-md-9"></div>{{ message.sent_at|date:_("DATETIME_FORMAT")}}<br>
 {% ifequal message.recipient.pk user.pk %} 

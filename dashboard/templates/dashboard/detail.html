@@ -24,18 +24,18 @@
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
 </head>
    <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
-<h3 style="color:#797980"><center><b>PAST DETAILS OF YOUR EVENT<b></center></h3>
+<h3 style="color:#797980"><center><b> EVENT  DETAILS<b></center></h3>
 <div class="container-fluid" style="height:auto; width: auto; color:#797980;  background-color: white">
 {% if event %}
     <div class="row">
         <div class="col-md-3">
 		<h4><label> EventImage</label></h4>	
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-4">
 			<h4><label> Title </label></h4>
 		</div>
 		
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<h4><label> OfferOn </label></h4>
 		</div>
 		
@@ -61,7 +61,7 @@
                 
 			</div>
             
-			<div class="col-md-3">
+			<div class="col-md-4">
 	
 			
 			
@@ -71,7 +71,7 @@
 			
                               
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 		
 			
                               <br><br><br><br>
@@ -86,59 +86,24 @@
            
 			
                  
-  <h5 style="color:black; margin-top:-70px"><a class="btn btn-default" href="/dashboard/detail/{{ event.pk }}/" style="color:#428BCA"> <i class="fa fa-pencil-square-o"></i>
-</a>  </h5>  
+  <h5 style="color:black; margin-top:-70px"><a class="btn btn-default" href="/dashboard/edit/{{ event.pk }}/" style="color:#428BCA"> <i class="fa fa-pencil-square-o"></i>
+</a>  </h5></div>
  {% endif %}
             </div>
 			</div>
 			
 		            </div>
-{% endfor %}
+{% endfor %} <br><br><br>
+			<br>
 			
 			{% else %}
                         
 <h4  style="color:#170f3d;">STILL YOU HAVE NOT BEGIN CHARITY.</h4>
-<p>*There is no any past history of your Donation.</p>
+<p>*There is no any past history of your Donation.</p><br><br><br><br><br><br>
 {% endif %}
-</div><br><br><br></div>
+</div></div>
 	<script>	
-     $("#img88").elevateZoom({scrollZoom : true});
+     $("#vin").elevateZoom({scrollZoom : true});
     </script>
 {% endblock content %}
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

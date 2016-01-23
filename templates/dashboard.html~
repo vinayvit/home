@@ -73,10 +73,10 @@
                         <a href="/products/list/ "><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
                     </li>
 		<li>
-                        <a href="/products/service/ "><i class="fa fa-square fa-3x"></i> GIVE SERVICE</a>
+                        <a href="/products/service/ "><i class="fa fa-square fa-3x"></i> OFFER SERVICE</a>
                     </li>
 		 <li>
-                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>OFFER EVNTS</a>
+                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>HOST EVNTS</a>
                     </li>
  			<li>
                         <a href="#"><i class="fa fa-sitemap fa-3x"></i> HISTORY<span class="fa arrow"></span></a>
@@ -85,7 +85,7 @@
                                 <a href="{% url 'post_history' %} "><i class="fa fa-laptop fa-3x"></i>Product History</a>
                             </li>
                             <li>
-                                <a href="{% url 'service_history' %}"><i class="fa fa-bolt fa-3x"></i>Service History</a>
+                                <a href="{% url 'service_history' %}"><i class="fa fa-archive" style="font-size:36px"></i>Service History</a>
                             </li>
                               <li>
                                  <a href="{% url 'devent_detail' %}"><i class="fa fa-bar-chart-o fa-3x"></i>Event History</a>
@@ -108,20 +108,7 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
             <div id="page-inner" >
-                <div class="row"  >
-                    <div class="col-md-12">
-
-                       <a href="{% url 'profiles' %} ">
- <h2 style="font-family:arctik;color:#FF8000">Hi  <b>{{ request.user.username }}</b></h2></a>
-                    </div>
-                            
-                 <!-- /. ROW  -->
-                  
-               
-
-
-
-</div>
+                
 
 
               

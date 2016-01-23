@@ -4,9 +4,9 @@
 
 {% block content %}
 <body> 
-<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: DarkCyan">
-<h1 style="color:white"><center><b>{% trans "Sent Message" %}<b><center></h1><br>
-<div class="container-fluid" style="height:auto; width: auto; color:DarkCyan; background-color: white">
+<div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
+<h1 style="color:white"><center><b>{% trans "SENT MESSAGE" %}<b><center></h1><br>
+<div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: white">
 {% if message_list %} 
 
 <div class="row">

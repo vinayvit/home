@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-<title>{% block head_title %}Icharity{% endblock %}</title>
+<title>{% block head_title %}Echarity{% endblock %}</title>
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,10 +73,10 @@
                         <a href="/products/list/ "><i class="fa fa-dashboard fa-3x"></i> DONATE ITEM</a>
                     </li>
 		<li>
-                        <a href="/products/service/ "><i class="fa fa-square fa-3x"></i> GIVE SERVICE</a>
+                        <a href="/products/service/ "><i class="fa fa-square fa-3x"></i> OFFER SERVICE</a>
                     </li>
 		 <li>
-                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>OFFER EVNTS</a>
+                        <a href="{% url 'devent' %} "><i class="fa fa-bar-chart-o fa-3x"></i>HOST EVENTS</a>
                     </li>
  			<li>
                         <a href="#"><i class="fa fa-sitemap fa-3x"></i> HISTORY<span class="fa arrow"></span></a>
@@ -85,7 +85,7 @@
                                 <a href="{% url 'post_history' %} "><i class="fa fa-laptop fa-3x"></i>Product History</a>
                             </li>
                             <li>
-                                <a href="{% url 'service_history' %}"><i class="fa fa-bolt fa-3x"></i>Service History</a>
+                                <a href="{% url 'service_history' %}"><i class="fa fa-archive" style="font-size:36px"></i>Service History</a>
                             </li>
                               <li>
                                  <a href="{% url 'devent_detail' %}"><i class="fa fa-bar-chart-o fa-3x"></i>Event History</a>
@@ -96,7 +96,7 @@
                         <a href="{% url 'profiles' %} "><i class="fa fa-table fa-3x"></i> PROFILE</a>
                     </li>	
                       <li>
-			<a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>CREATE PROFILE</a>
+			<a href="{% url 'edit' %} "><i class="fa fa-square-o fa-3x"></i>UPLOAD PROFILE</a>
                     </li>
                       	
                 </ul>
@@ -108,13 +108,7 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner" >
-                <div class="row" >
-                    <div class="col-md-12" >
-                     <h1 style="font-family: arctik; color:grey">Dashboard</h1>   
-                       <a href="{% url 'profiles' %} "style="color:#428BCA">
- <h3 >Hi  <b>{{ request.user.username }}</b></a>
-                    </div>
-                 </div>            
+                        
                  <!-- /. ROW  -->
                   
                 <div class="row" >

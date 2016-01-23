@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
-<h3 style="color:#797980"><center><b>YOUR PAST SERVICE DETAIL<b></center></h3>
+<h3 style="color:#797980"><center><b>SERVICE DETAILS<b></center></h3>
 <div class="container-fluid" style="height:auto; width: auto; color:DarkCyan; background-color: white">
     
 <h3 style="color:#3b5998; margin-left:50px">{{post.title}}</h3>
@@ -10,7 +10,7 @@
 
 
 
-<div class='col-sm-5' id="over">
+<div class='col-sm-6' id="over">
 
          {% load staticfiles %}
         <div>
@@ -32,7 +32,7 @@
 <div class='col-sm-1'>
 	</div>
     <!-- Product Sidebar --> 
-    <div class='col-sm-6'>
+    <div class='col-sm-4'>
          
         {% if object.variation_set.count > 1 %}
             <select class="form-control">
@@ -41,23 +41,20 @@
                 {% endfor %}
             </select>
         {% endif %}
-        
-        <h4 style="color:#434343;"><lable><i class="fa fa-calendar">From:</lable></h4></i>
-     <h4 style="color:#3b5998;">  {{post.date_Update|date:"d M Y"}}</h4>
+      <br> 
+          
+        <h4 style="color:#434343;"><lable><i class="fa fa-calendar"></i> From: <lable style="color:#3b5998;">  {{post.date_Update|date:"d M Y"}}</lable></lable></h4>
      
      
      
        	
-        <h4 style="color:#434343;"><lable><i class="fa fa-calendar"> Till:</lable></h4></i>
-      <h4 style="color:#3b5998"> {{post.expire_date|date:"d M Y"}}</h4>
+        <h4 style="color:#434343;"><lable><i class="fa fa-calendar"> </i> Till: <lable style="color:#3b5998"> {{post.expire_date|date:"d M Y"}}</lable></lable></h4>
       
       	
-        <h4 style="color:#434343;"><lable><i class="fa fa-home">Location:</lable></h4></i>
-       
-   <h4 style="color:#3b5998;">    {{post.address}}</h4>
+        <h4 style="color:#434343;"><lable><i class="fa fa-home"></i> Location: <lable style="color:#3b5998;">  {{post.address}}</lable></lable></h4>
        
        
-  <h4 style="color:#434343;">  Service:<a class="btn btn-default"href="{% url 'post_edit_service' pk=post.pk %}"> <i class="fa fa-pencil-square-o"></i>
+  <h4 style="color:#434343;">  Service edit:<a class="btn btn-default"href="{% url 'post_edit_service' pk=post.pk %}"> <i class="fa fa-pencil-square-o"></i>
 </a>  </h4>  
     </div>
 	<div class="row">

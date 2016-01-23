@@ -21,7 +21,7 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
-from .forms import DocumentForm, ServiceForm
+from .forms import DocumentForm, ServiceForm, Service1Form
 from dashboard.models import Document
 
 
