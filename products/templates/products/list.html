@@ -11,20 +11,19 @@
 <div class="col-md-2">
   </div>
 <div class="col-md-7" style="padding:1px;border:1px groove SteelBlue; background-color:white">
-<center><b><h1>Item Details</h1><b></center><hr>
+<center><b><h2>Submit Item Details</h2><b></center><hr>
 <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-9">
 
                 <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
+                        {% csrf_token %} 
                         
 {{ form|crispy }}
-                        
-                       <br>
-                        
-                       </div></div>
-                       <center> <button type="submit" class="btn btn-info btn-lg"  >Publish Product</button></center><br><br>
+    <br>
+         </div>
+</div>
+      <center> <input type="image" src='{% static "img/submit.png" %}' /></center><br><br>
                         </div>
                 </form>
                 </div> <br><br> </div><br>

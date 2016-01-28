@@ -1,84 +1,64 @@
 {% extends "welcome.html" %}        
 {% block content %}
 {% load staticfiles %}
+<body >
+<div class="row">
+<div class="col-md-5"> <h3><b>WE KNOW YOU AS:
+</div>
+<div class="col-md-7">
+{% load staticfiles %}
+ 
+                        
+                        
+             {% if document %}
+                                
+ {% for document in document %}
+                                <img src="{{ document.docfile.url }}"  alt="YOUR IMAGE" width="160px" height="150px"/>
+                      {% endfor %}
+          
+                        {% else %}
+                       <img id="blah" src="{% static 'assets/img/find_user.png' %}"  alt="your selected item" width="160px" height="150px"/></li>				<a href="{% url 'edit' %} "><i class="fa fa-pencil-square-o"></i>Update</a>				
+                {% endif %}  </b> </h3> </div></div><br><br>
 
-    <link href="{% static 'css/landing-page.css' %}" rel="stylesheet">
 
+<div class="row">
+<div class="col-md-6">
+                       <div class="row">
+<div class="col-md-3">
+ <label style="color: #AE4192">Your Email:</label></div>
+    <div class="col-md-5" name="mail"  style="width:300px; height:30px;padding-top:5px;padding-top:5px; background-color:white">{{ request.user.email}}</div></div><br><br>
+<div class="row">
+<div class="col-md-3">
+  <label style="color: #AE4192">Last login:</label></div>
+    <div class="col-md-5" name="login"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{ request.user.last_login}}</div></div> <br><br>
+<div class="row">
+<div class="col-md-3">
+ <label style="color: #AE4192">A/C Activation Date:</label></div>
+    <div class="col-md-5" name="account_no"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{ request.user.date_joined}}</div> 
+ </div></div>
+{% if document %}
+{% for document in document %}
+<div class="col-md-6">
+  <div class="row">
+<div class="col-md-3">
+<label style="color: #AE4192" class="responsive" >First Name:</label></div>
+    <div class="col-md-5" name="lastname"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{  document.firstname }}</div></div><br><br>
+<div class="row">
+<div class="col-md-3">
+ <label style="color: #AE4192">Last Name:</label></div>
+    <div class="col-md-5" name="lastname"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{ document.lastname}}</div></div><br><br>
+<div class="row">
+<div class="col-md-3">
+ <label style="color: #AE4192">Address:</label></div>
+    <div class="col-md-5" name="lastname"  style="width:300px; height:30px;padding-top:5px; background-color:white">{{ document.address}}</div></div><br>
+<div class="row"><div class="col-md-3"></div> {% endfor %}
+{% else %}
 
+                {% endif %}      
 
-</head>
-<body>
-  <div class="intro-header">
-  <h1 >Welcome <a href="{% url 'profiles' %} "><b>{{ request.user.username }}</b> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1><br> 
-        <div class="container-fluid">
-  
-            <div class="row"> <div class="col-lg-2"></div>
-                <div class="col-lg-10">
-                   <h3>INSTANT MESSAGING </h3><br>
-<div class="row"style="padding-left: 30px" >
-              <a href="{% url 'messages_inbox' %}">  <div class="col-md-3 col-sm-6 col-xs-6">           
-		<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-red set-icon" style="padding-top: 15px">
-                 <i class="fa fa-envelope-o"></i>
-                </span>
-                <div class="text-box" >
-                         <p class="text-muted">INBOX</p>
-                </div> 
-             </div>
-		     </div></a>
-                    <a href="{% url 'messages_outbox' %}"> <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-green set-icon"  style="padding-top: 15px">
-                    <i class="fa fa-external-link"></i>
-                </span>
-                <div class="text-box" >
-                   <p class="text-muted">OUTBOX</p>
-                </div>
-             </div>
-		     </div></a>
-                   <a href="{% url 'messages_compose' %}"> <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-blue set-icon"  style="padding-top: 15px">
-                    <i class="fa fa-pencil-square-o"></i>
-                </span>
-                <div class="text-box" >
-                    <p class="text-muted">TEXT</p>
-                </div>
-             </div>
-		     </div></a>
-                  <a href="{% url 'messages_trash' %}">   <div class="col-md-3 col-sm-6 col-xs-6">           
-			<div class="panel panel-back noti-box">
-                <span class="icon-box bg-color-brown set-icon"  style="padding-top: 15px">
-                    <i class="fa fa-trash-o"></i>
-                </span>
-                <div class="text-box" >
-                   <p class="text-muted">TRASH</p>
-                </div>
-             </div>
-		    </div></a></div>
-			<hr>
-<h1>EXPLORE YOUR DASHBOARD </h1>
-                        <h3>Operations on Your Profile </h3>
-                        <br>
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="{% url 'list' %}" class="btn btn-default btn-lg"><i class="fa fa-book fa-spin"></i> <span class="network-name">Donation</span></a>
-                            </li>
-                            <li>
-                                <a href="{% url 'post_history' %}" class="btn btn-default btn-lg"><i class="fa fa-cog fa-spin"></i> <span class="network-name">Account Details</span></a>
-                            </li>
-                            <li>
-                                <a href="{% url 'profiles' %}" class="btn btn-default btn-lg"><i class="fa fa-spinner fa-spin"></i> <span class="network-name">Personal</span></a>
-                            </li>
-                        </ul><br>
-<hr class="intro-divider"><br>
-                    </div>
-  <div class="container-fluid" style="height:98%"> </div>
-		     </div>
-                 
-</div>  
+                    </div></div></div>
+
+		     
         <!-- /.container-fluid -->
 
 </body>

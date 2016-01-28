@@ -6,7 +6,7 @@
 
 {% load staticfiles %}
   
-  
+  <body>
 <img src='{% static "img/snap/00url.png" %}' class="vertical-center"/>
 <br>
  <div class="container-fluid">    
@@ -17,10 +17,11 @@
 
 <form method='post' action='.'>{% csrf_token %}
 {{ form|crispy }}
-
-<input class='btn btn-success' type='submit' value='Submit' onclick="confirm('HAVE YOU ENTER CORRECT VALUES')" />
-
+<br><br>
+<center><input type="image" src='{% static "img/reg.png" %}' type='submit' value='Submit' onclick="confirm('HAVE YOU ENTER CORRECT VALUES')" />
+</center>
 </form><br><br>
 
-    </div></div>
+    </div><br><br></div>
+</body>
 {% endblock %}

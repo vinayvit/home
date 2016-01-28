@@ -319,7 +319,7 @@ def service(request):
     document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
     if request.method == 'POST':
         form = ServiceForm(request.POST, request.FILES)
-        if form:
+        if form.is_valid():
             newdoc = Service(user = request.user, title = request.POST['title'], docfile = request.FILES['docfile'], active = request.POST['active'], description = request.POST['description'], duraction = request.POST['duraction'], zip_Code = request.POST['zip_Code'], address = request.POST['address'], expire_date = request.POST['expire_date'])
             newdoc.save()
             return redirect('products.views.post_detail_service', pk=newdoc.pk)

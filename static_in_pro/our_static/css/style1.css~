@@ -1,4 +1,8 @@
 <!---------------------------------home----------------------------------->
+body {
+font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 #myBODY1 {
    background: Lavender ;
     background-size:100%;

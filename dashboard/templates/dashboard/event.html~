@@ -48,7 +48,7 @@ function resumeDiv() {
 </head>
    <body>     
                 <!-- List of uploaded documents -->
-                  <div class="container-fluid" style="width: auto; color:#58FA58; background-color: ghostwhite"> 
+                  <div class="container-fluid" style="width: auto; color:grey; background-color: ghostwhite"> 
          
          <br> <div class="container-fluid" >
 
@@ -119,7 +119,7 @@ function resumeDiv() {
 {% endfor %}
 </div><br>
  </div>
-    <div class="row" style="width: auto; color:#58FA58; background-color: Lavender"> 
+    <div class="row" style="width: auto; color:grey; background-color: Lavender"> 
     <div class="container-fluid"> 
 
 <div class="col-md-6">
@@ -130,7 +130,7 @@ function resumeDiv() {
                                 <br>
  {% if request.user.is_authenticated %}
                         <div class="col-md-5"></div><div class="col-md-7">
-                        <p><input type="submit" class="btn btn-info btn-lg"  value="Submit Event" /></p></div>
+                        <p><input type="image" src='{% static "img/submit.png" %}' /></p></div>
                 </form>
 {% else %}
 <div class="col-md-5"></div><div class="col-md-7"><p><button type="button"  class="btn btn-info btn-lg" onclick="alert('Login first for Publish Event')">Submit Event</button>

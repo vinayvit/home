@@ -7,95 +7,62 @@
 <script src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
 <script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
 
-        <body>
+        <body><br><br>
                 <!-- List of uploaded documents -->
-                  <div class="container-fluid" style="width: auto; height:1050px; color:grey; background :url({% static "img/map-image.png" %}) no-repeat center top"> 
+                  <div class="container-fluid" style="width: auto; height:950px; color:grey; background :url({% static "img/map-image.png" %}) no-repeat center top"> 
          
          <div class="container-fluid">
+<div class='row'>    
+       <div class='col-sm-1'></div>           
+<div class='col-sm-5'>
 
- <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px; width:100%; ">
-   <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox" style="width: 100%;">
-   {% if event.snap %}
-   <div class="item ">
-       <div class="img" style="height: 400px; width:110%">
- <img id="img1"src="{{ event.snap.url }}"  class="img-inline-responsive" width="100%" height="400px" alt="your selected item"/>
-      </div>
+<h1 style="width:490px; height:auto;padding-top:5px;padding-top:5px; background-color:white">{{  event.eventtype }} </h1><br>
+ {% if event.snap %}
+ <img id="img1"src="{{ event.snap.url }}"  class="img-inline-responsive" width="500px" height="500px" alt="your selected item"/>
+     
+ {% endif %} 
+<p>{{ event.description|truncatewords:15}}</p>
+</div><div class='col-sm-1'></div>  
+<div class='col-sm-5'>
+<br><br>
+<a href='{{ product.get_absolute_url }}'style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.date_event }} </span></h3></a> 
+<a href='{{ product.get_absolute_url }}'style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.duration }}
+</span></h3></a> 
+<a href='{{ product.get_absolute_url }}' style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.place }}</span></h3></a> 
+     
 
-   </div>
+<a href='{{ product.get_absolute_url }}' style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">Dresscode: {{  event.dresscode }}</span></h3></a> 
 
-      <div class="item active">
-       <div class="img" style="height: 400px; width:110%">		   	
- <img id="img1" src="{{ event.snap.url }}" class="img-inline-responsive" width="110%" height="400px" alt="your selected item"/>
-     </div>
-   </div>
- {% else %}
-<div class="item active ">
-       <div class="img" style="height: 400px; width:110%">
+          <br> 
 
-                       <img id="img1" src="{% static 'assets/img/find_user.png' %}" class="img-inline-responsive" width="110%" height="400px" alt="your selected item"/>
 
-  </div>
-</div>
-
-                {% endif %}
-
-  </div>
-</div>
-
-<div class='row'>
-       
-                  
-<div class='col-sm-5'></div><div class='col-sm-6'>
-
-<h1>{{  event.eventtype }} </h1><br></div>
-<div class='col-sm-2'></div>
-                <div class='col-sm-3'>{% if document %}
+{% if document %}
                                 
  {% for document in document %}
-                               <h4 data-toggle="modal" id='rim' data-target="#event">  <img src="{{ document.docfile.url }}" class="img-circle" id="circle" alt="{% static 'assets/img/find_user.png' %}" width="160px" height="150px"/>{{document.firstname}}&nbsp;{{ document.lastname}}</h4>
+                               <h4 style="width:300px; height:auto;padding-top:5px;padding-top:5px; background-color:white" data-toggle="modal" id='rim' data-target="#event">  <img src="{{ document.docfile.url }}" class="img-circle" id="circle" alt="{% static 'assets/img/find_user.png' %}" width="160px" height="150px"/>{{document.firstname}}&nbsp;{{ document.lastname}}</h4>
                       {% endfor %}
           
                         {% else %}
-                      <h4> <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle" id="circle"   alt="your selected item"/></img>UNKNOWN</h4>                {% endif %} 
-<a href='{{ product.get_absolute_url }}' style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.place }}</span></h3></a> 
-<br>       
+                      <h4 style="width:470px; height:auto;padding-top:5px;padding-top:5px; background-color:white"> <img id="blah" src="{% static 'assets/img/find_user.png' %}" class="img-circle" id="circle"   alt="your selected item"/></img>UNKNOWN</h4>                {% endif %} 
 
-<a href='{{ product.get_absolute_url }}' style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">Dresscode: {{  event.dresscode }}</span></h3></a> 
-</div>
-                <div class='col-sm-3'>
-{% if event.snap %}
- <img id="img1"src="{{ event.snap.url }}"  class="img-inline-responsive" width="60%" height="200px" alt="your selected item"/>
-     
+<a href="/products/enquiry/{{ event.user}}/" ><h3 class='btn btn-success btn-block'><i class="fa fa-calendar"></i> <span class="network-name">{{  event.user }}</span></h3></a> <br><br><br>
 
-   
- {% else %}
+<center>
+<i class="fa fa-facebook fa-4x"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-twitter fa-4x"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                           <i class="fa fa-google-plus fa-4x"></i>&nbsp;&nbsp;&nbsp;&nbsp;
 
-                       <img id="img1" src="{% static 'assets/img/find_user.png' %}" class="img-inline-responsive" width="60%" height="200px" alt="your selected item"/>
-
-                {% endif %}
+                            <i class="fa fa-linkedin fa-4x"></i></a></center>
+</div></div> 
 
 
 
- 
-</div>
- <div class='col-sm-3'>
-<a href='{{ product.get_absolute_url }}'style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.date_event }} </span></h3></a> 
-<br>           
-<a href='{{ product.get_absolute_url }}'style="color:#428BCA"><h3><i class="fa fa-calendar"></i> <span class="network-name">{{  event.duration }}
-</span></h3></a> 
-           <br> 
-<a href="/products/enquiry/{{ event.user}}/" ><h3 class='btn btn-default btn-block'><i class="fa fa-calendar"></i> <span class="network-name">{{  event.user }}</span></h3></a> 
 
                      
 </div>
 
 
-</div><br><br><div class='col-sm-2'></div>
- <p>{{ event.description|truncatewords:15}}</p> 
 
-
-  </div>
 {% for document in document %}
  <div class="modal fade" id="event" role="dialog">
 <div class="modal-dialog modal-sm">

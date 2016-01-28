@@ -1,4 +1,4 @@
-{% extends 'base.html' %}<br><br><br>
+  {% extends 'base.html' %}<br><br><br>
 
 {% load staticfiles %}
 
@@ -101,15 +101,11 @@ E-CHARITYProducts
                 {% endif %}
 <div class="caption">
 <p><u>{{ object.description|truncatechars:25 }}</u></p>
-<<<<<<< HEAD
+
 <p><a href="/service/{{ object.pk }}/" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/products/enquiry/{{ object.user}}/" class="btn btn-default" role="button">{{ object.user}}</a></p></div>
-=======
-<p><a href="/products/{{ object.pk }}/" class="btn btn-primary" role="button">View</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/products/enquiry/" class="btn btn-default" role="button">{{ object.user}}</a></p></div>
->>>>>>> 8d358d9eb9915c384bc166f8a2fd05624664d406
+
 		   	 </div>
 
 

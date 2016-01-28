@@ -123,14 +123,14 @@ function resumeDiv() {
     <div class="container-fluid"> 
 
 <div class="col-md-6">
-<p><b><h2>REVEAL YOUR PERSONAL Event Details WITH US..</h2></b></p>
+<p><b><h2>Reveal Event Details With Us..</h2></b></p>
 <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
                  
   {{ form|crispy }}
                                 <br>
  {% if request.user.is_authenticated %}
                         <div class="col-md-5"></div><div class="col-md-7">
-                        <p><input type="submit" class="btn btn-info btn-lg"  value="Submit Event" /></p></div>
+                        <p><input type="image" src='{% static "img/submit.png" %}' /></p></div>
                 </form>
 {% else %}
 <div class="col-md-5"></div><div class="col-md-7"><p><button type="button"  class="btn btn-info btn-lg" onclick="alert('Login first for Publish Event')">Submit Event</button>

@@ -11,7 +11,7 @@
 <div class="col-md-2">
   </div>
 <div class="col-md-8" style="padding:1px;border:1px groove SteelBlue; background-color:white">
-<center><b><h1>Edit Details</h1><b></center><hr>
+<center><b><h1>Edit Item Details</h1><b></center><hr>
 <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-9">
@@ -21,7 +21,7 @@
 <table>
 {{ form|crispy }}
 </table>
-<center><input type="submit" class="btn btn-info btn-lg" value="{% trans "Submit Changes" %} &raquo;"/></center>
+<center><input type="image" src='{% static "img/update.png" %}' value="{% trans "Submit Changes" %} &raquo;"/></center>
 </form></div></div></div></div><br><br>
 </div><br></div>
 

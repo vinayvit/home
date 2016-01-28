@@ -1,6 +1,11 @@
 <!---------------------------------home----------------------------------->
+body {
+font-family: inherit, Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 #myBODY1 {
    background: Lavender ;
+   font-family: inherit, Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-size:100%;
     weight:120px;
 

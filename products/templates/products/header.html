@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Custom Fonts -->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=arctik" />
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
@@ -14,11 +14,10 @@ background:white;
 }
 .navbar-collapse
  {
-        padding-top: 1%;
+        padding-top: 1.4%;
         padding-left: auto;}
 </style>
 </head>
-<body >
 <div class="navbar-default navbar-fixed-top" role="navigation">
 <div class="container-fluid">
 <div class="navbar-header">
@@ -35,10 +34,10 @@ background:white;
 <!-- Trigger the modal with a button -->
  
 {% if request.user.is_authenticated %}
-   <a href="{% url 'dashboard' %}"><img src="{% static 'img/hom.png' %}" class="img-circle" id="circle" alt="USER" style="width:50px; height:45px"/></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'dashboard' %}"><img src="{% static 'img/hom.png' %}" class="img-circle" id="circle" alt="USER" style="width:50px; height:45px"/></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+<a href="{% url 'auth_logout' %}"> <img src="{% static 'img/button_001.png' %}" alt="USER" /></a>&nbsp;&nbsp;
 {% else %}
-<button type="button"  class="btn btn-info btn-lg" data-toggle="modal" id='rim' data-target="#login">LOGIN HERE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='#login'><img src="{% static 'img/button.png' %}" data-toggle="modal" id='rim' data-target="#login" alt="USER" /></a>&nbsp;&nbsp;
  {% endif %}
 </ul>
 </div>
@@ -53,20 +52,32 @@ background:white;
           <h4 class="modal-title"><center>LOGIN HERE</center> </h4>
         </div>
        <div class="modal-body" style="background:Lavender">
-<center><b>Already Register Click Here <b></center>
-<a href="{% url 'auth_login' %}"> <img src='{% static "img/snap/button.png" %}' /> </a><hr/>
- <center><b>First Time User Click Here <b></center>
- <a dir="ltr" href="{% url 'registration_register' %}"> <img src='{% static "img/snap/buttonu1.png" %}' /></a>
+<center><a href="{% url 'auth_login' %}"> <img src='{% static "img/button_003.png" %}' /> </a></center>
+<center><b>Already Register <b></center><hr/>
+<center><a dir="ltr" href="{% url 'registration_register' %}"> <img src='{% static "img/button_002.png" %}' /></a></center>
+ <center><b>First Time User <b></center>
+ 
                 </div>
-<div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+<div class="modal-header" style="background:LightSteelBlue">
 
-      </div>
+       
+
+<center>Or Social Login with us</center>
+
+<center>
+ <a href="http://www.twitter.com"><img src='{% static "img/t.png" %}'/></a>&nbsp;&nbsp;
+
+ <a href="#"><img src='{% static "img/f.png" %}' id="loginBtn" onclick="logIn();" value="Login" /></a>&nbsp;&nbsp;
+
+ <a href="http://www.gmail.com"><img src='{% static "img/g.png" %}' /></a></center>
+  </div> </div></div>
+        </div>
+</div></div>
+     
 
     </div></div>
     
-</body>
+
 
 
 

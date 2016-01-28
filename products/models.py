@@ -77,15 +77,15 @@ class Product(models.Model):
 class Service(models.Model):
     user = models.ForeignKey(User)
     title  = models.CharField(max_length=120)
-    docfile = models.FileField(blank=True, upload_to='documents/%Y/%m/%d')
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d')
     description = models.CharField(default=False, max_length=160)
     active = models.BooleanField(default=True)
     duraction  = models.CharField(max_length=120)
-    zip_Code = models.CharField(blank = True, max_length=6)
+    zip_Code = models.CharField(max_length=6)
     address = models.CharField(default=False, max_length=60)
     date_created = models.DateTimeField(default=timezone.now)
     date_Update = models.DateTimeField(default=timezone.now)
-    expire_date = models.DateTimeField(blank=True, null=True)
+    expire_date = models.DateTimeField()
     
     class Meta:
         verbose_name = _("Service")

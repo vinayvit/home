@@ -27,7 +27,7 @@
   {% csrf_token %}
   {{ form|crispy }}
 
- <center>   <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Join' %}" /></center>
+ <center>   <input type="image" src='{% static "img/submit.png" %}' type="submit" value="{% trans 'Join' %}" /></center>
   <input type="hidden" name="next" value="{{ next }}" />
 
 </form></div></div>

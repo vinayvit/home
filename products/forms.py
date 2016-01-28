@@ -20,21 +20,21 @@ class Service1Form(forms.ModelForm):
 class DocumentForm(forms.Form):
     
     title = forms.CharField(
-        label='Item Title', widget=forms.TextInput(attrs={'placeholder': 'Enter title'})
+        label='Title', widget=forms.TextInput(attrs={'placeholder': 'Enter title'})
     )
     
     description = forms.CharField(
-        label='Item Description', widget=forms.TextInput(attrs={'placeholder': 'Tell more about your donating item'})
+        label='Description', widget=forms.TextInput(attrs={'placeholder': 'Tell more about your donating item'})
     )   
    
     quantity = forms.IntegerField(
-        label='Item Quantity', widget=forms.TextInput(attrs={'placeholder': 'No. of items you donating'})
+        label='Quantity', widget=forms.TextInput(attrs={'placeholder': 'No. of items you donating'})
     )
     zip_Code = forms.CharField(
-        label='Your Zipcode', widget=forms.TextInput(attrs={'placeholder': 'Zipcode of your area'})
+        label='Zipcode', widget=forms.TextInput(attrs={'placeholder': 'Zipcode of your area'})
     )
     docfile = forms.FileField(
-        label='Select  Your Product Image '
+        label='Product Image '
     )
     address = forms.CharField(
         label='Place Where Available', widget=forms.TextInput(attrs={'placeholder': 'Your loaction where item available '})
@@ -48,21 +48,21 @@ class DocumentForm(forms.Form):
 class ServiceForm(forms.Form): 
 	
     title = forms.CharField(
-        label='Service Title', widget=forms.TextInput(attrs={'placeholder': 'Provide service name'})
+        label='Title', widget=forms.TextInput(attrs={'placeholder': 'Provide service name'})
     )
     
     description = forms.CharField(
-        label='Service Description', widget=forms.TextInput(attrs={'placeholder': 'Some details about your service'})
+        label='Description', widget=forms.TextInput(attrs={'placeholder': 'Some details about your service'})
     )  
     
     duraction = forms.CharField(
-        label='Service Duration', widget=forms.TextInput(attrs={'placeholder': 'Time  schedule of service'})
+        label='Duration', widget=forms.TextInput(attrs={'placeholder': 'Time  schedule of service'})
     )
     zip_Code = forms.CharField(
-        label='Your Zipcode',widget=forms.TextInput(attrs={'placeholder': 'Your area zipcode'})
+        label='Zipcode',widget=forms.TextInput(attrs={'placeholder': 'Your area zipcode'})
     )
     docfile = forms.FileField(
-        label='Select  Your Product Image'
+        label='Select Service Image'
     )
     address = forms.CharField(
         label='Place', widget=forms.TextInput(attrs={'placeholder': 'place where service offer'})
@@ -70,7 +70,7 @@ class ServiceForm(forms.Form):
     expire_date = forms.DateTimeField(widget=DateTimeWidget(usel10n=True, bootstrap_version=3))
 
     active = forms.BooleanField(
-        label='Are you sure to publish '
+        label='Are you sure to publish'
     )
    
 

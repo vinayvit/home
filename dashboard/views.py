@@ -104,7 +104,7 @@ def devent(request):
             event.save()
 
             # Redirect to the document list after POST
-            return redirect('dashboard.views.devent_detail')
+            return redirect('dashboard.views.uevent_detail', pk=event.pk)
     else:
         form = EventForm() # A empty, unbound form
 
@@ -171,7 +171,7 @@ def devent_edit(request,pk):
             event.save()
 
             # Redirect to the document list after POST
-            return redirect('dashboard.views.devent_detail')
+            return redirect('dashboard.views.uevent_detail', pk=event.pk)
     else:
         form = EvtForm(instance=event) # A empty, unbound form
 

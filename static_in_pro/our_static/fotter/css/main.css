@@ -1,11 +1,6 @@
 
-  @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
-  @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
-  @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
-
   body {
-    background: #fff;
-    font-famil: arctik;
+
     font-weight: 300;
     font-size: 14px;
     line-height: 22px;
@@ -35,7 +30,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-famil: arctik;
+    font-family: "Myriad Apple", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
   }
 
@@ -431,7 +426,7 @@ ul.sub-menu {
   content: '"';
   font-size: 40px;
   color: #ea2c00;
-  font-famil: 'Noto Sans', sans-serif;
+  font-family: "Myriad Apple", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
   transform:rotate(180deg);
   -ms-transform:rotate(180deg); /* IE 9 */
   -webkit-transform: rotate(180deg); /* Opera, Chrome, and Safari */
@@ -445,7 +440,7 @@ ul.sub-menu {
   content: '"';
   font-size: 40px;
   color: #ea2c00;
-  font-famil: 'Noto Sans', sans-serif;
+  font-family: "Myriad Apple", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 0;
 }
 

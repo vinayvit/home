@@ -20,12 +20,13 @@
 
   {% csrf_token %}
   {{ form|crispy }}
+ <center>
 
- <center> <input class="btn btn-primary" type="submit" href="{% url 'list' %}" value="{% trans 'Submit' %}" /></center>
+ <center> <input type="image" src='{% static "img/reg.png" %}' href="{% url 'list' %}" value="{% trans 'Submit' %}" /></center>
   <input type="hidden" name="next" value="{{ next }}" />
 
 </form></div></div>
-<h6 align="right">{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}" style="color:#428BCA">{% trans "Reset it !" %}</a></h6>
+<h6 align="left">{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}" style="color:#428BCA">{% trans "Reset it !" %}</a></h6>
 <center><h4><b>Not a member yet ?<a href="{% url 'registration_register' %}" style="color:#428BCA"> Sign up here</a></b></h4></center>
 <hr/>
  <form>

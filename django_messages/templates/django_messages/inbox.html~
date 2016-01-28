@@ -36,8 +36,8 @@
     
 
 {% else %}
-<h1>{% trans "There is no messages in your box.." %}</h1>
-{% endif %} <br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br> 
+<h3>{% trans "There is no messages in your box.." %}</h3><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br> 
+{% endif %} 
 </div><br><br> </div>
 </body>
 {% endblock %}
