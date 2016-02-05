@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 {% load staticfiles %}  
-<body>
         <div class="row-fluid">
 <img src= "{% static 'img/snap/about1.png' %}" class="vertical-center"/>
 </div>
@@ -11,23 +10,12 @@
         <div class="container-fluid">
 
                 <div class="col-sm-5">
-                    <img src= "{% static 'img/01abt.png' %}"  class="img-responsive" alt=""/>
+                    <img src= "{% static 'img/01abt.png' %}"  style="height:290px;width:450px"  class="img-responsive" alt=""/>
                 </div>
                 <div class="col-sm-7">
-                    <p > eCharity foundation is an international not-for-profit (or non-profit) organization that was founded to support the victims of domestic violence (with a particular focus on victims of acid splash). Our mission is to reach out to this most vulnerable, often neglected and forgotten members of society and help them out by providing them different types of support;  It's time to give charity the big-league freedoms we really give to business. The fight for these freedoms must be our new cause, because without them, all of our causes are ultimately lost.</p>
-                    <p >The first and foremost goal is to restore their health and well-being, as much as possible, by providing them with cutting-edge medical treatments. Raising awareness is yet another goal of eCharity. We believe, by educating, not punishing, we can reduce and eventually eliminate the occurrence of this crime and crimes like this. Our ultimate mission is to support the victims to get back on their feet, once again, gain their self-confidence and to live a full life!.We are internaly have the good exprince to serve the people as per the donating thing  or charity."We think sometimes that poverty is only being hungry, uneducated and homeless. The poverty of being unwanted, unloved and uncared for is the greatest poverty. We must start in our own homes to remedy this kind of poverty." </p>
-<p>
-				No Goal Requirements;
-					Keep the money you raise whether you beat your goal or not. No deadlines.
-
-					Earn CrowdRise Impact Points;
-					Earn points when you raise money or give to a cause. It's the only rewards program in the giving world.
-
-
-					Your Charitable Life;
-					Show the world your charitable impact. Get your own homepage for all your fundraisers and donations.
-			
-              </p>  </div>
+                    <p > ECharity foundation is an international not-for-profit (or non-profit) organization that was founded to support the victims of domestic violence (with a particular focus on victims of acid splash). Our mission is to reach out to this most vulnerable, often neglected and forgotten members of society and help them out by providing them different types of support;  It's time to give charity the big-league freedoms we really give to business. The fight for these freedoms must be our new cause, because without them, all of our causes are ultimately lost.</p>
+                    <p >The first and foremost goal is to restore their health and well-being, as much as possible, by providing them with cutting-edge medical treatments. Raising awareness is yet another goal of eCharity. We believe, by educating, not punishing, we can reduce and eventually eliminate the occurrence of this crime and crimes like this. Our ultimate mission is to support the victims to get back on their feet, once again, gain their self-confidence and to live a full life!.We are internaly have the good exprince to serve the people as per the donating thing  or charity. </p>
+ </div>
 
         </div>
     </section>
@@ -281,7 +269,7 @@
     
     
     <script type="text/javascript" src="{% static 'fotter/js/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'fotter/js/bootstrap.min.js' %}"></script>
+
     <script type="text/javascript" src="{% static 'fotter/js/lightbox.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'fotter/js/wow.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'fotter/js/main.js' %}"></script> 

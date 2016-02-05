@@ -5,7 +5,7 @@
 {% block content %}
 <body>
 <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
-<h1 style="color:white"><center><b>{% trans "DELETED MESSAGES" %}<b><center></h1><br>
+<h1 style="color:white"><center><b>{% trans "Deletet Messages" %}<b><center></h1><br>
 <div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: white">
 {% if message_list %} 
 
@@ -22,7 +22,7 @@
 <hr/>
 {% for message in message_list %} 
     <div class="row">
-<a href="{{message.get_absolute_url }}" style="color:#428BCA" >
+<a href="{{message.get_absolute_url }}">
 <div class="col-md-2"><span class="glyphicon glyphicon-user">{{ message.sender }}</span> </div>  
             {% if message.new %}{% endif %}
             {% if message.replied %}{% endif %}
@@ -30,7 +30,7 @@
             {% if message.replied %}{% endif %}
             {% if message.new %}{% endif %}
 <div class="col-md-2">{{ message.sent_at|date:"d M Y" }}</div></a>
-        <div class="col-md-2"><a href="{% url 'messages_undelete' message.id %}" style="color:#428BCA" >{% trans "undelete" %}</a></div>
+        <div class="col-md-2"><a href="{% url 'messages_undelete' message.id %}"  >{% trans "undelete" %}</a></div>
     </div>
 {% endfor %}
    

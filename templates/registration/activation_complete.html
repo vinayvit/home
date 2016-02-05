@@ -3,10 +3,11 @@
 
 {% block content %}
 {% load static %}
-<div class="container-fluid">
-<div class="jumbotron"><img src='{% static "img/snap/1Ac.jpg" %}' class='vertical-center'/>
-	</div>
-		</div>
-<p class='lead'>{% trans "Your account is now activated." %}</p>
-</div>
+<div class="container-fluid" style="width: auto; height: auto; color:GhostWhite; background :url({% static "img/intro-bg.jpg" %}) no-repeat center top"> 
+<div class="container-fluid"><br><br><br><br><br>
+<div><center><img src='{% static "img/snap/1Ac.jpg" %}' class='img-responsive'/>
+    </center></div>
+		</div><br><br>
+<h3><center>{% trans "Your account is now activated." %}</center></h3><br><br><br><br><br>
+</div></div>
 {% endblock %}

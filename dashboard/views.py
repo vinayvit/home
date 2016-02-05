@@ -35,6 +35,8 @@ def profiles(request):
 
 
 def edit(request):
+    model = Document,User
+    document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES )
@@ -48,7 +50,7 @@ def edit(request):
         form = DocumentForm() # A empty, unbound form
 
    # Load documents for the list page
-    document = Document.objects.filter(user_id = request.user.id).order_by('-docfile')[:1]
+
    
 
     # Render list page with the documents and the form

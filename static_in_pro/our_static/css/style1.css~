@@ -1,16 +1,61 @@
 <!---------------------------------home----------------------------------->
 body {
-font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-family: "Myriad Apple", "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #myBODY1 {
    background: Lavender ;
+   font-family: "Myriad Apple", "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-size:100%;
     weight:120px;
-
 }
-a {
+.home
+{
+padding-left:15px;
+padding-top:0.5px;
+background-color:#F7F7F7;
+}
+.homet
+{
+width:auto;
+height:auto;
+background-color:white;
+}
+.homeld
+{
+padding-top:0.5px;
+background-color:#F7F7F7;
+}
+.homed
+{
+padding-left:6px;
+width:auto;
+height:auto;
+padding-top:3px;
+padding-bottom:3px;
+background-color:white;
+}
+.homep
+{
+padding-left:6px;
+width:auto;
+height:auto;
+padding-top:3px;
+padding-bottom:3px;
+background-color:#F7F7F7;
+}
+.homepd
+{
+padding-bottom:10px;
+padding-top:0.5px;
+background-color:white;
+}
+
+
+ ul li a {
       text-decoration:none;
+      color: white;
+      font-family: "Myriad Apple";
    }
 
     .mtb
@@ -44,11 +89,15 @@ color:#F99330;
 
 #text2{
 color:Black;
-
-
+}
+#logo{
+width:260px;
+height:250px;
 }
 
-
+.h2{
+color:#D57617;
+}
 
 <!---------------------------about----------------------------------------->
 

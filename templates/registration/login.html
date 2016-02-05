@@ -11,7 +11,11 @@
 <div class="col-md-4">
   </div>
 <div class="col-md-4" style="padding:1px;border:1px groove LightSteelBlue; background-color:#A4A4A4">
-<center><b><h1>Login</h1><b></center>
+{% if request.user.is_authenticated %}
+<p>YOUR ARE ALREADY LOGIN<P>
+<p> FOR LOGIN TO OTHER ACCOUNT; LOGOUT FIRST<p><a href="{% url 'auth_logout' %}" type="button" class="btn btn-info btn-lg">Logout</a></button>
+{% else %}
+<center><b><h1>Sign-In</h1><b></center>
 <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-8">
@@ -42,6 +46,8 @@
   </form></div> <br><br><br> <br> 
 </div>
 </div>
+{% endif %}
+
 <br><br><br><br><br><br>
 </div>
 

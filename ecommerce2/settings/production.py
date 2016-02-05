@@ -34,7 +34,7 @@ if not settings.DEBUG:
 	SECRET_KEY = 'csqwlmc8s55o($rt6ozh7u+ui9zb-et00w$d90j8$^!nvj41_r'
 
 	# SECURITY WARNING: don't run with debug turned on in production!
-	DEBUG = False
+
 
 	ADMINS = (
 		("Justin", "codingforentrepreneurs@gmail.com"),
@@ -43,7 +43,8 @@ if not settings.DEBUG:
 
 	ALLOWED_HOSTS = ['cfedeploy.webfactional.com', 'trydjango.com', 'www.trydjango.com']
 	#purchasing domain name http://name.com
-
+DEBUG = False
+TEMPLATE_DEBUG = True
 	
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'

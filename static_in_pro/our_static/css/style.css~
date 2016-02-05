@@ -4,7 +4,7 @@ Primary style
 
 -------------------------------- */
 body {
-font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-family: "Myriad Apple", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
@@ -87,7 +87,7 @@ header {
   -webkit-
 -smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #ffffff;
+  color: #6A6A6A;
   white-space: nowrap;
   border-bottom: 1px solid #555b61;
   text-overflow: ellipsis;

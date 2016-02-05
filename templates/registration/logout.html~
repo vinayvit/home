@@ -5,11 +5,16 @@
 {% load static %}
 <body>
 <br>
-<div class="container-fluid">
-<img src='{% static "img/snap/1bac.jpeg" %}'  class='vertical-center'/>
-		
-<p class='text-align-center lead'>You have successfully logged out.</p>
-<p class='text-align-center lead'><a href="{% url 'auth_login' %}" style="color:#428BCA">Login</a></p>
-</div>
+<div class="container-fluid" style="width: auto;  color:GhostWhite; background :url({% static "img/intro-bg.jpg" %}) no-repeat center top"> 
+<br><br><br><br><br><br>
+	<div class="row">
+<div class="col-md-3">
+  </div>
+<div class="col-md-6" style="padding:1px;border:1px groove LightSteelBlue; background-color:#A4A4A4">		
+<p class='text-align-center lead'>You have successfully logged out.<br><br>
+<a href="{% url 'auth_login' %}" style="color:#428BCA">Login</a></p><br>
+<img src='{% static "img/snap/1bac.jpeg" %}'  class='vertical-center'/></div>
+<br><br><br><br><br><br>
+</div><br><br></div>
 </body>
 {% endblock %}

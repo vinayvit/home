@@ -4,12 +4,12 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald"/>
 <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
-<h3 style="color:#797980"><center><b> EVENT DETAILS <b></center></h3>
+<h3 style="color:#797980"><center><b> EVENT DETAddILS <b></center></h3>
 <div class="container-fluid" style="height:auto; width: auto; color:DarkCyan; background-color:  white">
     <h3 style="color:#3b5998; margin-left:50px">{{event.eventtype}}</h3>
         
 
-    <div class='col-sm-6'>
+    <div class='col-sm-5'>
          
         <div>
 			
@@ -27,8 +27,7 @@
         </div> 
         
     </div>
-    <div class='col-sm-1'>
-	</div>
+    
     <!-- Product Sidebar --> 
     <div class='col-sm-5'>
         

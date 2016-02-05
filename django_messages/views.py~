@@ -11,7 +11,7 @@ from dashboard.models import Document
 from django.conf import settings
 from products.models import ProductManager, Product
 from django_messages.models import Message
-from django_messages.forms import ComposeForm
+from django_messages.forms import ComposeForm,EnquiryForm
 from django_messages.utils import format_quote, get_user_model, get_username_field
 
 User = get_user_model()
@@ -272,7 +272,7 @@ def view(request, message_id, form_class=ComposeForm, quote_helper=format_quote,
         context_instance=RequestContext(request))
 
 @login_required
-def enquiry(request, recipient=None, form_class=ComposeForm,
+def enquiry(request, recipient=None, form_class=EnquiryForm,
         template_name='products/products', success_url=None, recipient_filter=None):
     """
     Displays and handles the ``form_class`` form to compose new messages.
@@ -293,7 +293,7 @@ def enquiry(request, recipient=None, form_class=ComposeForm,
             form.save(sender=request.user)
             messages.info(request, _(u"Message successfully sent."))
             if success_url is None:
-                success_url = reverse('products')
+                success_url = reverse('home')
             if 'next' in request.GET:
                 success_url = request.GET['next']
             return HttpResponseRedirect(success_url)

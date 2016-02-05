@@ -5,7 +5,7 @@
 {% block content %}
 <body>
 <div class="container-fluid" class="responsive" style="background-color: grey">
-<h1 style="color:white"><center><b>{% trans "INBOX MESSAGE" %}<b></center></h1><br>
+<h2 style="color:white"><center><b>{% trans "Inbox Message" %}<b></center></h2><br>
 <div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: white">
 {% if message_list %} 
 
@@ -36,8 +36,8 @@
     
 
 {% else %}
-<h3>{% trans "There is no messages in your box.." %}</h3><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br> 
-{% endif %} 
+<h3>{% trans "There is no messages in your box.." %}</h3>
+{% endif %} <br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br> 
 </div><br><br> </div>
 </body>
 {% endblock %}

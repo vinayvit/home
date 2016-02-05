@@ -2,16 +2,16 @@
 {% block content %}
 {% load crispy_forms_tags %}
 {% load staticfiles %}
-<link href="{% static 'css/datetimepicker.css' %}" rel="stylesheet" />
+
    <body>
 <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
-<h1 style="color:white"><center><b>DONATE ITEM<b></h1></center>
+<h2 style="color:white"><center><b>Donate Item<b></h2></center>
 <div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: ghostwhite"><br><br>
 <div class="row">
 <div class="col-md-2">
   </div>
-<div class="col-md-7" style="padding:1px;border:1px groove SteelBlue; background-color:white">
-<center><b><h2>Submit Item Details</h2><b></center><hr>
+<div class="col-md-8" style="padding:1px;border:1px groove SteelBlue; background-color:white">
+<center><b><h2>Submit Details</h2><b></center><hr>
 <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-9">
@@ -23,12 +23,13 @@
     <br>
          </div>
 </div>
-      <center> <input type="image" src='{% static "img/submit.png" %}' /></center><br><br>
+      <center> <input type="image" src='{% static "img/submit.png" %}' /></center><br>
                         </div>
                 </form>
-                </div> <br><br> </div><br>
+                </div><br><br></div><br><br>
+</div><br></div>
 
-</div>
+</div></div>
 
 <script src="{% static 'js/bootstrap-datetimepicker.js' %}"></script>
 <script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>

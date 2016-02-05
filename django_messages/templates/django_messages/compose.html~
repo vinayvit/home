@@ -4,7 +4,7 @@
 {% block content %} 
 <body>
 <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: grey">
-<h1 style="color:white"><center><b>{% trans "COMPOSE MESSAGE" %}<b></center></h1><br>
+<h2 style="color:white"><center><b>{% trans "Compose Message" %}<b></center></h2><br>
 <div class="container-fluid" style="height:auto; width: auto; color:grey; background-color: ghostwhite"><br><br>
 <br>
 <div class="row">

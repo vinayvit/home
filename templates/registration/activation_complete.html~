@@ -4,7 +4,7 @@
 {% block content %}
 {% load static %}
 <div class="container-fluid">
-<div class="jumbotron"><img src='{% static "img/snap/1Ac.jpg" %}' class='vertical-center'/>
+<div class="jumbotron"><img src='{% static "img/snap/1Ac.jpg" %}' class='img-responsive'/>
 	</div>
 		</div>
 <p class='lead'>{% trans "Your account is now activated." %}</p>

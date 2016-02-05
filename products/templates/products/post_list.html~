@@ -3,7 +3,7 @@
 {% block content %}
 {% load staticfiles %}
 <head>
-
+    <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
     <style>
 		#hover:hover
 		{
@@ -21,12 +21,8 @@
 </head>
    <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
 <h3 style="color: #797980"><center><b>ITEM HISTORY<b></center></h3>
-<div class="container-fluid" style="height:auto; width: auto; color:#797980;  background-color: white">
- 
+<div class="container-fluid" style="height:auto; width: auto; color:#797980;  background-color: white"> 
 {% if posts %}
-    
-    
-
     <div class="row">
         <div class="col-md-3">
 		<h4><label> ProductImage</label></h4>	
@@ -53,38 +49,20 @@
            <div class="col-md-3" >
                         <ul>                               
                           <a href="{% url 'post_detail_history' pk=Product.pk %}" style="color:#428BCA">  <img id="vin" src="{{ Product.docfile.url }}" width="60px" height=60px" alt="{{ Product.docfile.name }}"></a>
-                               </li>
-                        
-                        </ul>
-               
-                
-			</div>
-            
-			<div class="col-md-3">
-	
-			
-			
-                              <br><br><br><br>
-			
-			<h4 style="margin-top:-70px"><a href="{% url 'post_detail_history' pk=Product.pk %}" style="text-decoration:none;color:#428BCA">{{ Product.title }}</a></h4>
-			
-                              
+                               </li>                        
+                        </ul>               
+			</div>            
+			<div class="col-md-3">			
+                              <br><br><br><br>		
+			<h5 style="margin-top:-70px"><a href="{% url 'post_detail_history' pk=Product.pk %}" style="text-decoration:none;color:#428BCA">{{ Product.title }}</a></h5>
+		                
 			</div>
 			<div class="col-md-4">
-		
-			
-                              <br><br><br><br>
-            <h4 style="margin-top:-70px"><a href="{% url 'post_detail_history' pk=Product.pk %}" style="text-decoration:none;color:#428BCA"> {{ Product.date_created|date:"d M Y" }}</a> </h4>
-			
-
-                              </div>
+		<br><br><br><br>
+            <h5 style="margin-top:-70px"><a href="{% url 'post_detail_history' pk=Product.pk %}" style="text-decoration:none;color:#428BCA"> {{ Product.date_created|date:"d M Y" }}</a> </h5>
+			 </div>
  <div class="col-md-2">
-
-			
-                              <br><br><br><br>
-           
-			
-                 
+ <br><br><br><br>
   <h5 style="color:black; margin-top:-70px"><a class="btn btn-default"href="{% url 'post_edit_list' pk=Product.pk %}" style="color:#428BCA"> <i class="fa fa-pencil-square-o"></i>
 </a>  </h5>  
 			</div>
@@ -94,21 +72,12 @@
 			</div>
 			
 		            </div>{% endfor %} <br><br><br>
-			<br>
-			
-			
+			<br>			
 			{% else %}
                         
 <h3 style="color:#170f3d;">There is no any past product history................</h3><br><br><br><br><br><br><br><br>
 			
 			{% endif %}
-			
-			
-			
-			
-			
-			
-			
 			</div></div>
 	<script>	
      $("#vin").elevateZoom({scrollZoom : true});

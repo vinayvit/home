@@ -12,13 +12,13 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/$', ProductDetailView.as_view(), name='product_detail'),
     url(r'^(?P<pk>\d+)/inventory/$', VariationListView.as_view(), name='product_inventory'),
     url(r'^enquiry/(?P<recipient>[\w.@+-]+)/$', enquiry, name='messages_compose_to'),
-    url(r'^list/$', views.list, name='list'),
+    url(r'^host/$', views.list, name='list'),
     url(r'^list/(?P<pk>[0-9]+)/$', views.post_detail_list, name='post_detail_list'),
     url(r'^list/detail/$', views.list_detail, name='list_detail'),
-    url(r'^list/(?P<pk>[0-9]+)/edit/$', views.post_edit_list, name='post_edit_list'), 
-    url(r'^service/$', views.service, name='service'),
-    url(r'^service/(?P<pk>[0-9]+)/$', views.post_detail_service, name='post_detail_service'),
+    url(r'^(?P<pk>[0-9]+)/edit/$', views.post_edit_list, name='post_edit_list'), 
+    #url(r'^service/$', views.service, name='service'),
+    #url(r'^service/(?P<pk>[0-9]+)/$', views.post_detail_service, name='post_detail_service'),
     
-    url(r'^service/(?P<pk>[0-9]+)/edit/$', views.post_edit_service, name='post_edit_service'),
+    #url(r'^service/(?P<pk>[0-9]+)/edit/$', views.post_edit_service, name='post_edit_service'),
 
 ]

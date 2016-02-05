@@ -2,25 +2,17 @@
 {% load staticfiles %}
 <html>
 <head>
-<style>
-a {
-  color: #eaeef2;
-  text-decoration: none;
-}
-</style>
+<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
 <div class="navbar-default navbar-bottom" role="navigation" style="background-color: #383838">
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-9">
-<div class="tab lable" style="padding-top: 5px"> <!-- Only required for left/right tabs -->
+<div class="tab lable"> <!-- Only required for left/right tabs -->
 <ul class="nav nav-pills">
  <li role="presentation"><a href="{% url 'about' %}" ><b>ABOUT US</b></a></li>
- <li role="presentation"><a href="{% url 'gallery' %}"><b>GALLERY</b></a></li>
   <li role="presentation"><a href="{% url 'faq' %}"><b>FAQ</b></a></li>
- <li role="presentation"><a href="{% url 'services' %}"><b>OUR SERVICES</b></a></li>
   <li role="presentation"><a href="{% url 'term' %}"><b>TERMS OF USE</b></a></li>
   <li role="presentation"><a href="{% url 'contact' %}"><b>CONTACT US</b></a></li></ul>
 </div>

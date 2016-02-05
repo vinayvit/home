@@ -24,7 +24,7 @@
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
 </head>
    <div class="container-fluid" class="responsive" style="height: auto; width: auto; background-color: white">
-<h3 style="color:#797980"><center><b> EVENT  DETAILS<b></center></h3>
+<h3 style="color:#797980"><center><b> EVENTS <b></center></h3>
 <div class="container-fluid" style="height:auto; width: auto; color:#797980;  background-color: white">
 {% if event %}
     <div class="row">
@@ -53,7 +53,7 @@
 		{% if event %}
            <div class="col-md-3" >
                         <ul>                               
-                         <a href="/dashboard/detail/{{ event.pk }}/"> <img src="{{ event.snap.url }}" class="img-responsive"  width="60px" height=60px" alt="image "></a>
+                         <a href="/detail/event/{{ event.pk }}/"> <img src="{{ event.snap.url }}" class="img-responsive"  width="60px" height=60px" alt="image "></a>
                                </li>
                         
                         </ul>
@@ -67,7 +67,7 @@
 			
                               <br><br><br><br>
 			
-			<h5 style="margin-top:-70px"><a href="/dashboard/detail/{{ event.pk }}/" style="text-decoration:none;color:#428BCA">{{  event.eventtype|upper|truncatewords:10 }}</a></h5>
+			<h5 style="margin-top:-70px"><a href="/detail/event/{{ event.pk }}/" style="text-decoration:none;color:#428BCA">{{  event.eventtype|upper|truncatewords:10 }}</a></h5>
 			
                               
 			</div>
@@ -75,7 +75,7 @@
 		
 			
                               <br><br><br><br>
-            <h5 style="margin-top:-70px"><a href="/dashboard/detail/{{ event.pk }}/" style="text-decoration:none;color:#428BCA"> {{  event.date_event|date:"d M Y" }}</a> </h5>
+            <h5 style="margin-top:-70px"><a href="/detail/event/{{ event.pk }}/" style="text-decoration:none;color:#428BCA"> {{  event.date_event|date:"d M Y" }}</a> </h5>
 			
 
                               </div>
@@ -86,7 +86,7 @@
            
 			
                  
-  <h5 style="color:black; margin-top:-70px"><a class="btn btn-default" href="/dashboard/edit/{{ event.pk }}/" style="color:#428BCA"> <i class="fa fa-pencil-square-o"></i>
+  <h5 style="color:black; margin-top:-70px"><a class="btn btn-default" href="/event/edit/{{ event.pk }}/" style="color:#428BCA"> <i class="fa fa-pencil-square-o"></i>
 </a>  </h5></div>
  {% endif %}
             </div>

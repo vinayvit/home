@@ -3,11 +3,12 @@
 
 {% block content %}
 {% load static %}
-<div class="container-fluid">
-<div class="jumbotron"><img src='{% static "img/snap/0donatio.png" %}'
-	</div>
+<div class="container-fluid" style="width: auto; height: auto; color:GhostWhite; background :url({% static "img/intro-bg.jpg" %}) no-repeat center top"> 
+<div class="container-fluid"><br><br><br><br><br>
+<div><center><img src='{% static "img/snap/0donatio.png" %}' class="img-responsive">
+                  </center></div><br><br>
 		
-<p>{% trans "You are now registered. Activation email sent." %}</p>
-<u><b>OPEN YOUR E-MAIL AND ACTIVATE YOUR ACCOUNT<b></u>
-</div></div>
+    <p><center>{% trans "You are now registered. Activation email sent." %}</center></p>
+    <u><b><center>OPEN YOUR E-MAIL AND ACTIVATE YOUR ACCOUNT</center><b></u><br><br><br><br><br><br><br>
+        </div></div></div>
 {% endblock %}

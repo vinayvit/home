@@ -13,24 +13,24 @@ ScrollRate = 50;
 function scrollDiv_init() {
 	DivElmnt = document.getElementById('MyDivName');
 	ReachedMaxScroll = false;
-	
+
 	DivElmnt.scrollTop = 0;
 	PreviousScrollTop  = 0;
-	
+
 	ScrollInterval = setInterval('scrollDiv()', ScrollRate);
 }
 
 function scrollDiv() {
-	
+
 	if (!ReachedMaxScroll) {
 		DivElmnt.scrollTop = PreviousScrollTop;
 		PreviousScrollTop++;
-		
+
 		ReachedMaxScroll = DivElmnt.scrollTop >= (DivElmnt.scrollHeight - DivElmnt.offsetHeight);
 	}
 	else {
 		ReachedMaxScroll = (DivElmnt.scrollTop == 0)?false:true;
-		
+
 		DivElmnt.scrollTop = PreviousScrollTop;
 		PreviousScrollTop--;
 	}
@@ -46,100 +46,64 @@ function resumeDiv() {
 }
 </script>
 </head>
-   <body>     
+   <body><br>
                 <!-- List of uploaded documents -->
-                  <div class="container-fluid" style="width: auto; color:grey; background-color: ghostwhite"> 
-         
-         <br> <div class="container-fluid" >
-
- <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px; width:100%; ">
-   <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox" style="width: 100%;">
-      <div class="item active">
-       <div class="img" style="height: 400px; width:100%">
- <img id="img1" src="{% static 'img/page-1_slide01.jpg' %}" class="img-responsive"/>
-      </div>
-
+ <div class="container-fluid" style="color:grey; background-color:#E10985; height:115px"><br>
+ <p style="font-size:40px; padding-left:70px;padding-top:30px; color:white;"> CONNECT</p>
    </div>
-
-      <div class="item">
-       <div class="img" style="height: 400px; width:100%">
- <img id="img1" src="{% static 'img/page-1_slide02.jpg' %}" class="img-responsive"/>
-      </div>
-
-   </div>
-
-
-      <div class="item ">
-       <div class="img" style="height: 400px; width:100%">
- <img id="img1" src="{% static 'img/page-1_slide03.jpg' %}" class="img-responsive"/>
-      </div>
-
-   </div>
-
-      <div class="item ">
-       <div class="img" style="height: 400px; width:100%">
- <img id="img1" src="{% static 'img/nepal.jpg' %}" class="img-responsive"/>
-      </div>
-
-   </div>
-     
-    </a>
-  </div>
-</div>
-</div>
-<br>
-<hr>
-             <center> <h1 style="color:RoyalBlue  "><b> EVENT SECTION<b></h1></center>
-
 <br><br>
  <div class="container-fluid">
 <div class='row'>
-                      
+
 {% for event in event %}
-		<div class='col-sm-2'>
-			<div class="thumbnail" style="width:100%; height:250px;">
-<a href="/dashboard/event/{{ event.pk }}/" class='btn btn-info btn-block' role="button"><b>{{  event.eventtype|upper|truncatewords:10 }}</b></a>
-	
+		<div class='col-sm-3'>
+			<div class="thumbnail" style="width:100%; height:240px;">
+<a href="/event/{{ event.pk }}/" > <div style="color:white;padding-top:4px; background-color:#E10985; height:30px"><center><b>{{  event.eventtype|title|truncatewords:10 }}</b></center></div></a>
+
 {% if event.snap %}
 
-		   	 <img src="{{ event.snap.url }}" class="img-responsive"   alt="image not found" style="width:100%; height:100px;"></img>
+		   	<a href="/event/{{ event.pk }}/"> <img src="{{ event.snap.url }}" class="img-responsive"   alt="image not found" style="width:100%; height:125px;"></img></a>
            {% else %}
                        <img id="blah" src="{% static 'assets/img/find_user.png' %}"  alt="your selected item" style="width:100%; height:100px;"/>
-								
-                {% endif %}	
-			<h4><span class="glyphicon glyphicon-calendar"><a href='{{ product.get_absolute_url }}'style="color:#428BCA"> {{  event.date_event|date:"d M Y" }}</a></span></h4>
-<h4><i class="fa fa-home">
-{{  event.place }}</i></a> </h4>
+
+                {% endif %}
+			<a href='/event/{{ event.pk }}/' style="color:#9697A2"> <span class="glyphicon glyphicon-calendar"></span>{{  event.date_event|date:"d M Y"}}<br>
+<i class="fa fa-home"></i>
+{{  event.place }}</a> 
 {% if event.docfile %}
                                 <img src="{{ event.docfile.url }}"class="img-circle" id="circle" alt="not" width="160px" height="150px"/>                      {% endif %}
-<a href="/products/enquiry/{{ event.user}}/"  class='btn btn-warning btn-block' role="button">{{  event.user }}</a>
+<a href="/event/enquiry/{{ event.user}}/"  class='btn btn-warning btn-block' style="height:35px;background-color:#A22382; color:white" role="button">
+    <i class="fa fa-user" style="padding-top:4px">&nbsp;<b>{{ event.user }}</b></i></a>
+
 </div>
 </div>
 {% endfor %}
 </div><br>
  </div>
-    <div class="row" style="width: auto; color:grey; background-color: Lavender"> 
-    <div class="container-fluid"> 
+ <div class="container-fluid" style="width: auto; color:grey; background-color: Lavender">
+    <div class="row">
 
-<div class="col-md-6">
-<p><b><h2>Reveal Event Details With Us..</h2></b></p>
+
+<div class="col-md-5">
+<p><b><h2>Post Event</h2></b></p>
 <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
-                 
+
   {{ form|crispy }}
-                                <br>
+
  {% if request.user.is_authenticated %}
                         <div class="col-md-5"></div><div class="col-md-7">
-                        <p><input type="image" src='{% static "img/submit.png" %}' /></p></div>
+                        <input type="image" src='{% static "img/submit.png" %}' /></div><br><br>
                 </form>
 {% else %}
-<div class="col-md-5"></div><div class="col-md-7"><p><button type="button"  class="btn btn-info btn-lg" onclick="alert('Login first for Publish Event')">Submit Event</button>
-</p></div>
-{% endif %}
+
+<div class="col-md-5"></div><div class="col-md-7"><button type="button" class="btn btn-info btn-lg" onclick="alert('Login first for Publish Event')">Submit Event</button>
+</div><br><br>
+{% endif %}<br><br>
 </div>
-<div class="col-md-6">
+<div class="col-md-2"></div>
+<div class="col-md-5">
 <body class='container-fluid'   onLoad="scrollDiv_init()">
-<div id="MyDivName" style="overflow:auto;width:350px;height:350px;float:right;" onMouseOver="pauseDiv()" onMouseOut="resumeDiv()" >
+<div id="MyDivName" style="overflow:auto;width:70%;height:350px;float:right;" onMouseOver="pauseDiv()" onMouseOut="resumeDiv()" >
 {% for event in event %}
 <a href='/dashboard/event/{{ event.pk }}/'style="color:#428BCA"> <h3>
 {% if event.snap %}
@@ -147,14 +111,14 @@ function resumeDiv() {
 		   	 <img class="img-circle" src="{{ event.snap.url }}" class="img-responsive"    alt="image not found" style="width:30%; height:80px;"></img>
            {% else %}
                        <img class="img-circle" src="{% static 'assets/img/find_user.png' %}"  alt="your selected item" style="width:30%; height:80px;"/>
-								
+
                 {% endif %}
-{{  event.eventtype|upper|truncatewords:10 }}</h3><h5>Place : {{  event.place }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{  event.eventtype|title|truncatewords:10 }}</h3><h5>Place : {{  event.place }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On : {{  event.date_event|date:"d M Y" }}</h5></a><hr>{% endfor %}
 </div>
 </body></div>
+</div>
 </div></div>
-</div> </body>
 
 </html>
 {% endblock %}
